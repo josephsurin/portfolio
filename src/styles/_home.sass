@@ -1,0 +1,39 @@
+.home-wrapper
+	width: 100%
+	height: 100vh
+	position: absolute
+	.home-main
+		margin: 15% 33% 20% 33%
+		text-align: center
+		+break-medium
+			margin: 15% 40px 20% 40px
+		+break-small
+			margin: 28vh 5px 20% 5px
+		.title
+			font-family: 'Source Sans Pro'
+			font-size: 30px
+			margin-bottom: 12px
+		.subtitle
+			margin-bottom: 12px
+		.link-buttons
+			margin-top: 52px
+			.link-button
+				margin: 0 20px
+				cursor: pointer
+				color: black
+				text-decoration: none
+				+break-small
+					border: 1px dotted grey
+					padding: 5px
+			.github-button
+				&:hover
+					color: #f05133
+			.linkedin-button
+				&:hover
+					color: #007bb6
+			.at-button
+				&:hover
+					color: #61e28e
+			.resume-button
+				&:hover
+					color: #74e7f2
