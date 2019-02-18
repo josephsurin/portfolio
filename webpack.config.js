@@ -17,29 +17,39 @@ module.exports = {
 		publicPath: './',
 	},
 	module: {
-		rules: [
-			{
-				test: /\.jsx?$/,
-				exclude: /node_modules/,
-				loader: 'babel-loader',
-				options: {
-					presets: ['@babel/preset-env', '@babel/react']
-				}
-			},
-			{
-				test: /\.(sa|c)ss$/,
-				use: extractPlugin.extract({
-					use: ['css-loader', 'sass-loader']
-				})
-			},
-			{
-				test: /\.(png|jpe?g|gif|svg|eot|svg|otf|ttf|woff|woff2)$/,
-				loader: 'file-loader',
-				options: {
-					name: 'assets/[name].[ext]'
-				}
-			},
-			{ test: /\.html$/, use: ['html-loader'] }
+		rules: [{
+			test: /\.jsx?$/,
+			exclude: /node_modules/,
+			loader: 'babel-loader',
+			options: {
+				presets: ['@babel/preset-env', '@babel/react']
+			}
+		},
+		{
+			test: /\.(sa|c)ss$/,
+			use: extractPlugin.extract({
+				use: ['css-loader', 'sass-loader']
+			})
+		},
+		{
+			test: /\.(png|jpe?g|gif|svg|eot|svg|otf|ttf|woff|woff2)$/,
+			loader: 'file-loader',
+			options: {
+				name: 'assets/[name].[ext]'
+			}
+		},
+		{
+			test: /\.html$/,
+			use: ['html-loader']
+		},
+		{
+			test: /\.md$/,
+			use: ['json-loader', 'yaml-frontmatter-loader']
+		},
+		{
+			test: /\.json$/,
+			use: ['json-loader']
+		}
 		]
 	},
 	plugins: [
