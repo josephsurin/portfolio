@@ -7,10 +7,6 @@ var extractPlugin = new ExtractTextPlugin({
 })
 
 module.exports = {
-	devServer: {
-		inline:true,
-		port: 5500
-	},
 	devtool: 'source-map',
 	watch: true,
 	mode: 'development',

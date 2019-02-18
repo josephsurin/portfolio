@@ -2,6 +2,8 @@
 	width: 100%
 	height: 100vh
 	position: absolute
+	background-color: $white
+	color: $dark-grey
 	.home-main
 		margin: 15% 33% 20% 33%
 		text-align: center
@@ -20,14 +22,14 @@
 			.link-button
 				margin: 0 20px
 				cursor: pointer
-				color: black
 				text-decoration: none
+				color: $dark-grey
 				+break-small
-					border: 1px dotted grey
+					border: 1px dotted $dark-grey
 					padding: 5px
 			.github-button
 				&:hover
-					color: #f05133
+					color: #000000
 			.linkedin-button
 				&:hover
 					color: #007bb6
@@ -37,3 +39,26 @@
 			.resume-button
 				&:hover
 					color: #74e7f2
+		.work-buttons
+			margin-top: 80px
+			display: grid
+			grid-template-columns: repeat(2, 1fr)
+			grid-gap: 60px
+			+break-medium
+				margin-left: 20%
+				width: 60%
+				grid-template-columns: 100%
+			a
+				text-decoration: none
+			.work-button
+				padding: 16px 0
+				border: 2px solid $dark-grey
+				font-family: 'Source Sans Pro'
+				font-weight: 900
+				font-size: 14px
+				transition: 0.3s ease
+				color: $dark-grey
+				&:hover
+					cursor: pointer
+					background-color: $dark-grey
+					color: $white

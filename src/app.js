@@ -1,14 +1,16 @@
 import React from 'react'
-
-require('./styles/main.sass')
-
+import { HashRouter as Router, Route } from 'react-router-dom'
 import Home from './Components/Home'
 
 const App = () => {
 	return (
-		<div className="app-wrapper">
-			<Home />
-		</div>
+		<Router>
+			<div className="app-wrapper">
+				<Route exact path="/" component={Home} />
+				<Route path="/blog" render={() => <div>hey</div>} />
+				<Route path="/portfolio" component={Home} />
+			</div>
+		</Router>
 	)
 }
 

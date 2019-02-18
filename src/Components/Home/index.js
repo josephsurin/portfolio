@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
 	return (
@@ -11,6 +12,10 @@ const Home = () => {
 					<a title="LinkedIn" href="https://www.linkedin.com/in/joseph-surin-0a756b17b/" className="fa-brands link-button linkedin-button">linkedin</a>
 					<a title="Email" href="mailto:joseph.surin@gmail.com" className="fa-solid link-button at-button">at</a>
 					<a title="Resume (PDF)" href="#" className="fa-solid link-button resume-button">file-alt</a>
+				</div>
+				<div className="work-buttons">
+					<Link to="/blog"><div className="work-button blog-button">BLOG</div></Link>
+					<Link to="/portfolio"><div className="work-button portfolio-button">PORTFOLIO</div></Link>
 				</div>
 			</div>
 		</div>
