@@ -1,5 +1,5 @@
 ---
-title: post 1
+title: My First Blog Post
 date: '18/02/2019'
 spoiler: thee First poST!@
 tags: tag1,tag2,tag three
