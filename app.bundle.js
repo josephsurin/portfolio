@@ -80736,7 +80736,7 @@ var Home = function Home() {
     className: "link-buttons"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     title: "Github",
-    href: "https://github.com/fumetsuu",
+    href: "https://github.com/josephsurin",
     className: "fa-brands link-button github-button"
   }, "github"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     title: "LinkedIn",
