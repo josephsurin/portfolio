@@ -45,10 +45,6 @@ module.exports = {
 		{
 			test: /\.md$/,
 			use: ['json-loader', 'yaml-frontmatter-loader']
-		},
-		{
-			test: /\.json$/,
-			use: ['json-loader']
 		}
 		]
 	},

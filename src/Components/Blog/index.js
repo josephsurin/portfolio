@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
+import { formatDate } from '../../util'
+import Tags from './tags'
 const posts = require('../../posts/posts')
-
-import PostPage from './postPage'
 
 export default class Blog extends Component {
 	constructor(props) {
@@ -20,15 +21,16 @@ export default class Blog extends Component {
 				<div className="blog-header">
 					Personal blog by Joseph Surin
 				</div>
+				<div className="blog-subtitle">I put stuff about school, my thoughts and my projects here.</div>
 				<div className="posts">
 					{posts.map(post => {
 						let { attributes: { title, date, spoiler, tags }} = post
 						return(
 							<div key={title} className="post">
-								<div className="post-title">{title}</div>
-								<div className="post-date">{date}</div>
+								<Link to={`/blog/${title}`}><div className="post-title">{title}</div></Link>
+								<div className="post-date">{formatDate(date)}</div>
 								<div className="post-spoiler">{spoiler}</div>
-								<div className="post-tags">{tags}</div>
+								<Tags tags={tags}/>
 							</div>
 						)
 					})}
