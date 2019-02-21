@@ -80843,7 +80843,7 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = {"attributes":{"title":"My First Blog Post","date":"18/02/2019","spoiler":"thee First poST!@","tags":"tag1,tag2,tag three"},"body":"hey lol\r\n```yaml\r\nhey: vvvv\r\n---\r\nsdfsdf\r\n---\r\n```\r\nso basicaly just talking then `oh what` is this a `piece` of `code`\r\n\r\n:) :eyes: :rocket:\r\n\r\n### Plan:\r\n- [x] Morning calisthenics\r\n- [x] Anki (kanji)\r\n- [ ] Anki (personal vocab)\r\n- [ ] read **sano** tetsuya\r\n\r\n# Maxwell's Equations\r\n\r\n$\\nabla \\cdot \\vec{\\mathbf{B}}  = 0$ | divergence of $\\vec{\\mathbf{B}}$ is zero\r\n\r\n# Math Rulez! $\\sqrt{3x-1}+(1+x)^2$\r\n$$\\sqrt3$$\r\n$\\sqrt3$\r\n\r\n$$\\int_{0}^{\\infty} \\vec{v}dt$$\r\n\r\n> asdfas hel olo i  am q uote lolol `k kj`l `asdfasfddf ooh # dafs ok byeeyeyeyey\r\n\r\n`oh hey`\r\n\r\n![electricity](http://i.giphy.com/Gty2oDYQ1fih2.gif)\r\n[link](http://google.com)\r\n\r\n\r\n| a11 | a12 | a13 |\r\n| --- | --- | --- |\r\n| a21 | a22 | a23 |","frontmatter":"title: My First Blog Post\r\ndate: '18/02/2019'\r\nspoiler: thee First poST!@\r\ntags: tag1,tag2,tag three"}
+module.exports = {"attributes":{"title":"testing markdown","date":"18/02/2019","spoiler":"md test","tags":"tag1,tag2,tag three"},"body":"\r\n```yaml\r\naa: vvvv\r\n---\r\nsdfsdf\r\n---\r\n```\r\ntesting markdown\r\n\r\n:) :eyes: :rocket:\r\n\r\n# Maxwell's Equations\r\n\r\n$\\nabla \\cdot \\vec{\\mathbf{B}}  = 0$ | divergence of $\\vec{\\mathbf{B}}$ is zero\r\n\r\n $\\sqrt{3x-1}+(1+x)^2$\r\n$$\\sqrt3$$\r\n$\\sqrt3$\r\n\r\n$$\\int_{0}^{\\infty} \\vec{v}dt$$\r\n\r\n> asdfas hello `k kj`l `asdfasfddf ooh # dafs ok byeeyeyeyey\r\n\r\n`oh`\r\n\r\n![electricity](http://i.giphy.com/Gty2oDYQ1fih2.gif)\r\n[link](http://google.com)\r\n\r\n\r\n| a11 | a12 | a13 |\r\n| --- | --- | --- |\r\n| a21 | a22 | a23 |","frontmatter":"title: testing markdown\r\ndate: '18/02/2019'\r\nspoiler: md test\r\ntags: tag1,tag2,tag three"}
 
 /***/ }),
 
@@ -80854,7 +80854,7 @@ module.exports = {"attributes":{"title":"My First Blog Post","date":"18/02/2019"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = {"attributes":{"title":"post 2","date":"19/02/2019","spoiler":"thee SecND poST!@","tags":"tag hello,tag1,tag2"},"body":"# post 2\r\nhey lol\r\nasdfasdfはい\r\n`ha`","frontmatter":"title: post 2\r\ndate: '19/02/2019'\r\nspoiler: thee SecND poST!@\r\ntags: tag hello,tag1,tag2"}
+module.exports = {"attributes":{"title":"post 2","date":"19/02/2019","spoiler":"post test","tags":"tag hello,tag1,tag2"},"body":"T\r\nasdfasdfはい\r\n`ha`","frontmatter":"title: post 2\r\ndate: '19/02/2019'\r\nspoiler: post test\r\ntags: tag hello,tag1,tag2"}
 
 /***/ }),
 
