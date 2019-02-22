@@ -1662,7 +1662,7 @@ table {
   font-family: Merriweather;
   color: #455b64; }
   .post-page .back-button {
-    padding: 12px 0;
+    padding: 12px 20px;
     border: 2px solid #455b64;
     font-family: 'Source Sans Pro';
     font-weight: 900;
@@ -1736,6 +1736,15 @@ table {
       cursor: pointer;
       background-color: #53b4ff; }
 
+.progress-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 0%;
+  background-color: #7cebff;
+  transition: all 0.1s ease; }
+
 html, body {
   margin: 0;
   padding: 0;
@@ -1743,3 +1752,12 @@ html, body {
 
 a:hover {
   text-decoration: none; }
+
+.loading {
+  background-color: #7cebff;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
