@@ -87165,7 +87165,6 @@ function (_Component) {
           date = _this$state$postMeta.date,
           tags = _this$state$postMeta.tags,
           postBody = _this$state.postBody;
-      console.log(title, date);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "post-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -87458,7 +87457,7 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED
 
 module.exports = [{
   title: 'Generating hexagons with SVG',
-  slug: 'generating-hexagons-with-svg',
+  slug: 'generating_hexagons_with_svg',
   date: '22/02/2019',
   tags: 'development,react,project,frontend'
 }];
@@ -87496,8 +87495,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'Decemember'];
 function formatDate(ddmmyyyy) {
-  console.log(ddmmyyyy);
-
   var _ddmmyyyy$split = ddmmyyyy.split('/'),
       _ddmmyyyy$split2 = _slicedToArray(_ddmmyyyy$split, 3),
       day = _ddmmyyyy$split2[0],
