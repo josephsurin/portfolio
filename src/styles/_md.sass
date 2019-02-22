@@ -1,22 +1,31 @@
-pre.hljs
+pre.codeblock
 	position: relative
-	padding: 24px
+	padding: 24px !important
 	border-radius: 10px
 	font-size: 15px
 	box-shadow: 1px 1px 15px 1px transparentize($dark-blue, 0.85)
-	margin: 24px -8px
+	margin: 24px -16px !important
+	overflow-x: auto
 	code
 		background-color: transparent
 
-.md-code-lang
-	position: absolute
-	right: 5px
-	top: 5px
-	padding: 4px 10px
-	background-color: $light-blue
-	border-top-right-radius: 10px
-	border-bottom-left-radius: 10px
-	color: $white
+.code-toolbar
+	.toolbar
+		opacity: 1 !important
+		.toolbar-item
+			span
+				position: absolute
+				right: -16px
+				top: 0
+				padding: 4px 10px
+				background-color: $light-blue
+				border-top-right-radius: 10px
+				border-top-left-radius: 0
+				border-bottom-left-radius: 10px
+				border-bottom-right-radius: 0
+				font-family: Consolas
+				color: $white
+				pointer-events: none
 
 hr
 	color: transparentize($light-grey, 0.4)
@@ -29,7 +38,11 @@ p code, pre code
 
 a
 	color: $light-blue
+	font-weight: bold
 	text-decoration: none
+	outline: none
+	&:hover
+		color: $blue
 
 blockquote
 	margin: 24px -28px
