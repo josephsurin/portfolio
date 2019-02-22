@@ -5,50 +5,47 @@ import PropTypes from 'prop-types'
 import { formatDate } from '../../util'
 import Tags from './tags'
 
-const posts = require('../../posts')
-const postsBuildDir = 'posts/'
-
-const frontmatter = require('front-matter')
 import { md } from './markdown'
+
+import simpleStore from './simpleStore'
 
 export default class PostPage extends Component {
 	constructor(props) {
 		super(props)
 
-		this.state = {
-			postMeta: posts.find(post => post.slug == props.match.params.slug),
-			postBody: null
+		var postPageProps = simpleStore.get('postPageProps')
+		//prioritise using post data from state
+		if(postPageProps) {
+			this.state = {
+				postMeta: Object.assign({}, postPageProps.postMeta),
+				postBody: postPageProps.postBody
+			}
+		} else {
+			this.fetchPostData()
 		}
 
-		this.fetchPostBody()
 	}
 
 	render() {
-		var { postMeta: { title, date, tags }, postBody } = this.state
-
+		let { postMeta: { title, date, tags }, postBody } = this.state
 		return (
 			<div className="post-page">
-				<Link to="/blog"><div className="back-button">BACK</div></Link>
+				<Link to="/blog" className="back-button">BACK</Link>
 				<div className="post-title">{title}</div>
 				<div className="post-date">{formatDate(date)}</div>
 				<Tags tags={tags} />
 				<hr />
-				<div className="post-body" dangerouslySetInnerHTML={{ __html: md.render(postBody || '') }}/>
+				<div className="post-body" dangerouslySetInnerHTML={{ __html: md.render(postBody) }}/>
 			</div>
 		)
 	}
 
-	fetchPostBody() {
-		const postFilepath = `${postsBuildDir}${this.props.match.params.slug}.md`
-		fetch(postFilepath)
-			.then(res => res.text())
-			.then(rawMD => {
-				let { body } = frontmatter(rawMD)
-				this.setState({ postBody: body })
-			})
+	fetchPostData() {
+		
 	}
 }
 
 PostPage.propTypes = {
-	match: PropTypes.object.isRequired
+	postMeta: PropTypes.object.isRequired,
+	postBody: PropTypes.string.isRequired
 }
