@@ -14,7 +14,7 @@ class SimpleStore {
 
 export const simpleStore = new SimpleStore()
 
-const postsBuildDir = 'posts/'
+const postsBuildDir = 'assets/posts/'
 const frontmatter = require('front-matter')
 
 export function fetchPostData(slug) {
