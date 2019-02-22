@@ -4,12 +4,9 @@ import PropTypes from 'prop-types'
 import { formatDate } from '../../util'
 import Tags from './tags'
 
-const postsBuildDir = 'posts/'
 const posts = require('../../posts')
 
-const frontmatter = require('front-matter')
-
-import simpleStore from './simpleStore'
+import { simpleStore, fetchPostData } from './util'
 export default class Blog extends Component {
 	constructor(props) {
 		super(props)
@@ -51,23 +48,13 @@ export default class Blog extends Component {
 
 	readyPostPage(slug) {
 		this.setState({ progressPercent: 80 })
-		const postFilepath = `${postsBuildDir}${slug}.md`
-		fetch(postFilepath)
-			.then(res => {
-				this.setState({ progressPercent: 100 })
-				return res.text()
-			})
-			.then(rawMD => {
-				let { attributes, body } = frontmatter(rawMD)
-				let postPageProps = {
-					postMeta: attributes,
-					postBody: body
-				}
-				simpleStore.set('postPageProps', postPageProps)
-				setTimeout(() => {
-					this.props.history.push(`blog/${slug}`)
-				}, 100)
-			})
+		fetchPostData(slug).then(postPageProps => {
+			this.setState({ progressPercent: 100 })
+			simpleStore.set('postPageProps', postPageProps)
+			setTimeout(() => {
+				this.props.history.push(`blog/${slug}`)
+			}, 100)
+		})
 	}
 }
 

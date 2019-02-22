@@ -7,7 +7,7 @@ import Tags from './tags'
 
 import { md } from './markdown'
 
-import simpleStore from './simpleStore'
+import { simpleStore, fetchPostData } from './util'
 
 export default class PostPage extends Component {
 	constructor(props) {
@@ -27,6 +27,9 @@ export default class PostPage extends Component {
 	}
 
 	render() {
+		if(!this.state) {
+			return <div className="loading"/>
+		}
 		let { postMeta: { title, date, tags }, postBody } = this.state
 		return (
 			<div className="post-page">
@@ -35,17 +38,21 @@ export default class PostPage extends Component {
 				<div className="post-date">{formatDate(date)}</div>
 				<Tags tags={tags} />
 				<hr />
-				<div className="post-body" dangerouslySetInnerHTML={{ __html: md.render(postBody) }}/>
+				<div className="post-body" dangerouslySetInnerHTML={{ __html: md.render(postBody || '') }}/>
 			</div>
 		)
 	}
 
 	fetchPostData() {
-		
+		fetchPostData(this.props.match.params.slug).then(postPageProps => {
+			this.setState({
+				postMeta: Object.assign({}, postPageProps.postMeta),
+				postBody: postPageProps.postBody
+			})
+		})
 	}
 }
 
 PostPage.propTypes = {
-	postMeta: PropTypes.object.isRequired,
-	postBody: PropTypes.string.isRequired
+	match: PropTypes.object.isRequired
 }
