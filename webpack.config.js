@@ -32,7 +32,7 @@ module.exports = {
 			})
 		},
 		{
-			test: /\.(png|jpe?g|gif|svg|eot|svg|otf|ttf|woff|woff2)$/,
+			test: /\.(png|jpe?g|gif|svg|eot|svg|otf|ttf|woff|woff2|md)$/,
 			loader: 'file-loader',
 			options: {
 				name: 'assets/[name].[ext]'
@@ -42,10 +42,10 @@ module.exports = {
 			test: /\.html$/,
 			use: ['html-loader']
 		},
-		{
-			test: /\.md$/,
-			use: ['json-loader', 'yaml-frontmatter-loader']
-		}
+		// {
+		// 	test: /\.md$/,
+		// 	use: ['json-loader', 'yaml-frontmatter-loader']
+		// }
 		]
 	},
 	plugins: [
