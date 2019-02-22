@@ -1,5 +1,6 @@
 ---
 title: Generating hexagons with SVG
+slug: generating-hexagons-with-svg
 date: 22/02/2019
 tags: development,react,project,frontend
 ---
@@ -89,7 +90,7 @@ As you can see from the code, each of the `M`, `L`, `Q` and `Z` instance methods
 
 I had already decided that the function's signature would looks something like `generateHexSVG(sideLength, borderRadius) => string of SVG commands`. Essentialy, the parameters I had to work with were the `sideLength` and the `borderRadius` parameters.
 From the geometry of a hexagon, we can determine the width and height of it based on the given side length.
-<img src="assets/hexgeometry.png" width="200" align="right" />
+<img src="posts/assets/hexgeometry.png" width="200" align="right" />
 
 The `width` of the hexagon is given by
 $$w = 2 \times \frac{\sqrt3 s}{2} = \sqrt3 s$$
@@ -100,7 +101,7 @@ The next step is to find a position vector for each vertex of the hexagon; if we
 
 For convenience, we'll name each vertex with a letter, starting with the top vertex being `a`, the one to its immediate right being `b`, and the one immediately left of `a` being `f`.
 
-<img src="assets/hexlabelled.png" width="200" align="right"/>
+<img src="posts/assets/hexlabelled.png" width="200" align="right"/>
 
 Looking at these two images, it isn't hard to determine the position vectors for each of the vertices. With the origin being at the top left as per SVG standards, the positions of the vertices are:
 
@@ -136,7 +137,7 @@ if(borderRadius == 0) {
 If instead the hexagon is to have smooth corners, we'll need a way to make the corners rounded. Bezier curves are the right tool for this type of job, and for this particlar case, a quadratic curve will be most suitable. SVG allows us to create a quadratic curve by passing 4 parameters to the `Q` command. The parameters are `x1 y1 x y` where `x1` and `y1` are the coordinates of the control point and `x` and `y` are the coordinates of the end point.
 <img src="https://mdn.mozillademos.org/files/10403/Quadratic_Bezier_with_grid.png" align="right" />
 The image to the right [from MDN docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths) shows this behaviour. The three red points are our points of interest and the black curve is the resulting quadratic curve. The point on the far left is the current position, i.e. the point that we arrive at after using an `M` or `L` command. The point in the middle is the control point, and the point on the far right is the end point. The line passing through the current point and the control point is tangent to the curve, this is also true for the line passing through the end point and the control point. Hence, if we let the control point be the vertex of a hexagon, and the start and end points to be some points along the hexagon's perimeter, by using the quadratic curve command, we can emulate rounded corners. 
-<img src="assets/hexdv.png" width="200" align="right" />
+<img src="posts/assets/hexdv.png" width="200" align="right" />
 
 To help us with this, we'll define some new vectors $\overrightarrow{dl}$, $\overrightarrow{dr}$ and $\overrightarrow{dd}$ which are vectors parallel to the sides of the hexagon and with magnitude equal to `borderRadius`. Specifically:
 

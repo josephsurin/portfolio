@@ -10,7 +10,7 @@ const App = () => {
 			<div className="app-wrapper">
 				<Route exact path="/" component={Home} />
 				<Route exact path="/blog" component={Blog} />
-				<Route path="/blog/:title" component={PostPage} />
+				<Route path="/blog/:slug" component={PostPage} />
 				<Route path="/portfolio" component={Home} />
 			</div>
 		</Router>
