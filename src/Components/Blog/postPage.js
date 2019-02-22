@@ -31,7 +31,7 @@ export default class PostPage extends Component {
 			return <div className="loading"/>
 		}
 		let { postMeta: { title, date, tags }, postBody } = this.state
-		console.log(title, date)
+		
 		return (
 			<div className="post-page">
 				<Link to="/blog" className="back-button">BACK</Link>

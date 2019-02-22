@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "postbuild": "node ./scripts/postbuild",
-    "build": "webpack --config webpack.config.js && npm run postbuild",
+    "build": "webpack --config webpack.config.js",
     "build-prod": "rimraf build && webpack --config webpack.config.prod.js && npm run postbuild",
     "start": "live-server build"
   },
