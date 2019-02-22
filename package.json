@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "build-prod": "webpack --config webpack.config.prod.js"
+    "postbuild": "node ./scripts/postbuild",
+    "build": "webpack --config webpack.config.js && npm run postbuild",
+    "build-prod": "rimraf build && webpack --config webpack.config.prod.js && npm run postbuild",
+    "start": "live-server build"
   },
   "author": "",
   "license": "ISC",

@@ -5,6 +5,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
 const prod = {
 	devtool: 'none',
+	watch: false,
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env': {
