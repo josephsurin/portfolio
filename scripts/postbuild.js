@@ -17,7 +17,7 @@ var postsMetadata = fs.readdirSync(postsDir)
 	.map(postFilename => {
 		//copy .md files but use the extension .blogpost (gh-pages workaround)
 		let source = path.join(postsDir, postFilename)
-		let dest = path.join(buildPostsDir, `${path.basename(postFilename, '.md')}.blogpost`)
+		let dest = path.join(buildPostsDir, postFilename)
 		fs.copyFile(source, dest, err => { if(err) console.log(err) })
 
 		//add metadata

@@ -21,12 +21,10 @@ const frontmatter = require('front-matter')
 
 export function fetchPostData(slug) {
 	return new Promise((resolve, reject) => {
-		const postFilepath = `${window.location.origin}/${postsBuildDir}${slug}.blogpost`
-		console.log('fetching ', postFilepath)
+		const postFilepath = `${postsBuildDir}${slug}.md`
 		fetch(postFilepath)
 			.then(x => x.text())
 			.then(rawMD => {
-				console.log('rawMD: ', rawMD)
 				let { attributes, body } = frontmatter(rawMD)
 				let postPageProps = {
 					postMeta: attributes,
