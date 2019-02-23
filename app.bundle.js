@@ -63059,6 +63059,11 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED
 /***/ (function(module, exports) {
 
 module.exports = [{
+  title: 'Github Pages and serving md',
+  slug: 'github-pages-and-serving-md',
+  date: '24/02/2019',
+  tags: 'development'
+}, {
   title: 'Generating hexagons with SVG',
   slug: 'generating-hexagons-with-svg',
   date: '22/02/2019',
