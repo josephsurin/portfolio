@@ -63057,7 +63057,7 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED
 
 module.exports = [{
   title: 'Generating hexagons with SVG',
-  slug: 'generating_hexagons_with_svg',
+  slug: 'generating-hexagons-with-svg',
   date: '22/02/2019',
   tags: 'development,react,project,frontend'
 }];
