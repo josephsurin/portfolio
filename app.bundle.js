@@ -62895,7 +62895,7 @@ function () {
 }();
 
 var simpleStore = new SimpleStore();
-var postsBuildDir = 'assets/posts/';
+var postsBuildDir = 'assets/';
 
 var frontmatter = __webpack_require__(/*! front-matter */ "./node_modules/front-matter/index.js");
 
