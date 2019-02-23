@@ -11,6 +11,11 @@ module.exports = {
 	watch: true,
 	mode: 'development',
 	entry: './src/index.js',
+	node: {
+		fs: 'empty',
+		net: 'empty',
+		tls: 'empty'
+	},
 	output: {
 		path: path.resolve(__dirname, 'build'),
 		filename: 'app.bundle.js',
