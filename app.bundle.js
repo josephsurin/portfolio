@@ -62895,13 +62895,13 @@ function () {
 }();
 
 var simpleStore = new SimpleStore();
-var postsBuildDir = 'assets/';
+var postsBuildDir = 'posts/';
 
 var frontmatter = __webpack_require__(/*! front-matter */ "./node_modules/front-matter/index.js");
 
 function fetchPostData(slug) {
   return new Promise(function (resolve, reject) {
-    var postFilepath = "".concat(postsBuildDir).concat(slug, ".md");
+    var postFilepath = "".concat(postsBuildDir).concat(slug, ".blogpost");
     fetch(postFilepath).then(function (res) {
       return res.text();
     }).then(function (rawMD) {
