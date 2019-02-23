@@ -14,12 +14,12 @@ class SimpleStore {
 
 export const simpleStore = new SimpleStore()
 
-const postsBuildDir = 'assets/'
+const postsBuildDir = 'posts/'
 const frontmatter = require('front-matter')
 
 export function fetchPostData(slug) {
 	return new Promise((resolve, reject) => {
-		const postFilepath = `${postsBuildDir}${slug}.md`
+		const postFilepath = `${postsBuildDir}${slug}.blogpost`
 		fetch(postFilepath)
 			.then(res => res.text())
 			.then(rawMD => {
