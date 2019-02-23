@@ -7,7 +7,7 @@ const { ncp } = require('ncp')
 
 /* copy .md files and write metadata to posts.js */
 const postsDir = path.resolve(__dirname, '../src/posts/')
-const buildPostsDir = path.resolve(__dirname, '../build/assets/posts/')
+const buildPostsDir = path.resolve(__dirname, '../build/assets/')
 
 const postsMetadataFile = path.join(postsDir, 'index.js')
 
@@ -32,7 +32,7 @@ fs.writeFileSync(postsMetadataFile, postsFile)
 
 /* copy assets files */
 const postsAssetsDir = path.resolve(__dirname, '../src/posts/assets/')
-const buildAssetsDir = path.resolve(__dirname, '../build/assets/posts/assets/')
+const buildAssetsDir = path.resolve(__dirname, '../build/assets/')
 
 if(!fs.existsSync(buildAssetsDir)) fs.mkdirSync(buildAssetsDir)
 ncp(postsAssetsDir, buildAssetsDir, err => { if(err) console.log(err) })
