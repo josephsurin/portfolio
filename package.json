@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postbuild": "node ./scripts/postbuild",
+    "prebuild": "node ./scripts/prebuild",
     "build": "webpack --config webpack.config.js",
-    "build-prod": "rimraf build && webpack --config webpack.config.prod.js && npm run postbuild",
+    "build-prod": "rimraf build && mkdir build && npm run prebuild && webpack --config webpack.config.prod.js",
     "start": "live-server build"
   },
   "author": "",

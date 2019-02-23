@@ -24,7 +24,7 @@ var postsMetadata = fs.readdirSync(postsDir)
 		let post = fs.readFileSync(path.join(postsDir, postFilename)).toString()
 		let { attributes } = frontmatter(post)
 		return attributes
-	})
+	}).reverse()
 
 //write metadata
 var postsFile = `module.exports = ${stringifyObject(postsMetadata, stringifyObjectOpts)}`
