@@ -1587,8 +1587,6 @@ table {
   table tbody tr {
     padding: 6px 13px;
     border-top: 1px solid #c6cbd1; }
-    table tbody tr:nth-child(2n) {
-      background-color: #9fb4bd; }
   table tbody td {
     padding: 6px 13px;
     border: 1px solid #86868d; }
