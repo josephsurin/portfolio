@@ -88,10 +88,14 @@ Write a function `valid_word` that takes two parameters: `board` and `word`, and
 
 For example, if the board is as given below, calling `valid_word` with the words `ABC` or `AESAG` would return `True`, while calling it with the words `CDE` or `ESACF` would return `False`
 
+<center>
+
 | **A** | **B** | **C** | **D** |
 | --- | --- | --- | --- |
 | **E** | **S** | **A** | **C** |
 | **F** | **E** | **G** | **A** |
+
+</center>
 
 ### Sample solution
 
@@ -107,17 +111,23 @@ def valid_word(board, word):
     def valid_word_r(p, word):
         l = word[0]
         adj = get_adjacent(p[0], p[1])
-        al = list(map(lambda a: board[a[0]][a[1]], adj))
+        al = map(lambda a: board[a[0]][a[1]], adj)
+
         if l not in al: return False
         if len(word) == 1: return True
+            
         np = [a for a in adj if board[a[0]][a[1]] == l]
-        return any(list(map(lambda p: valid_word_r(p, word[1:]), np)))
+        return any(map(lambda p: valid_word_r(p, word[1:]), np))
 
     sp = [(i, r.index(word[0])) for i,r in enumerate(board) if word[0] in r]
+    
+    if len(word) == 1 and word[0] in map(lambda a: board[a[0]][a[1]], sp): return True
+    else: return False
+    
     return any(map(lambda a: valid_word_r(a, word[1:]), sp))
 ```
 
-Note: We were warned to only attempt this question after completing all of the other questions. I think this question was designed specifically to distinguish the students' capabilities. I think most people would have either spent around 30 to 40 minutes on this question or not attempted it at all.
+Note: We were warned to only attempt this question after completing all of the other questions. I think this question was designed specifically to distinguish the students' capabilities. I think most people would have either spent around 30 to 40 minutes on this question or not attempted it at all. Some students asked if they could solve it for the specific case given in the examples, which was a 3 by 4 grid and a 3 letter word. The above solution solves the general case for an m by n grid and a word of arbitrary length > 0.
 
 ## Question 6: Short Answer Responses [10 marks]
 
