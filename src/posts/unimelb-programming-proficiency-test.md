@@ -120,9 +120,8 @@ def valid_word(board, word):
         return any(map(lambda p: valid_word_r(p, word[1:]), np))
 
     sp = [(i, r.index(word[0])) for i,r in enumerate(board) if word[0] in r]
-    
     if len(word) == 1 and word[0] in map(lambda a: board[a[0]][a[1]], sp): return True
-    else: return False
+    elif len(word) == 1: return False
     
     return any(map(lambda a: valid_word_r(a, word[1:]), sp))
 ```
