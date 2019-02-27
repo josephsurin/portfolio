@@ -63059,6 +63059,11 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED
 /***/ (function(module, exports) {
 
 module.exports = [{
+  title: 'Unimelb programming proficiency test',
+  slug: 'unimelb-programming-proficiency-test',
+  date: '27/02/2019',
+  tags: 'uni'
+}, {
   title: 'How this blog works',
   slug: 'how-this-blog-works',
   date: '25/02/2019',
