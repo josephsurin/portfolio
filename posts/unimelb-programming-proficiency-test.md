@@ -89,7 +89,7 @@ Write a function `valid_word` that takes two parameters: `board` and `word`, and
 For example, if the board is as given below, calling `valid_word` with the words `ABC` or `AESAG` would return `True`, while calling it with the words `CDE` or `ESACF` would return `False`
 
 | **A** | **B** | **C** | **D** |
-| -- |
+| --- | --- | --- | --- |
 | **E** | **S** | **A** | **C** |
 | **F** | **E** | **G** | **A** |
 
