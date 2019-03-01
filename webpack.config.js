@@ -10,7 +10,7 @@ module.exports = {
 	devtool: 'source-map',
 	watch: true,
 	mode: 'development',
-	entry: ['@babel/polyfill', './src/index.js'],
+	entry: './src/index.js',
 	node: {
 		fs: 'empty',
 		net: 'empty',
