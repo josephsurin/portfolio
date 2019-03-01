@@ -63126,7 +63126,7 @@ function formatDate(ddmmyyyy) {
 /***/ (function(module, exports) {
 
 (function suAnalyticsInitialise() {
-  var API_URL = 'http://su-analytics.herokuapp.com/api';
+  var API_URL = 'https://su-analytics.herokuapp.com/api';
 
   window.onhashchange = function () {
     var url = window.location.href;
