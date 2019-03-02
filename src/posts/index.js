@@ -1,5 +1,11 @@
 module.exports = [
 	{
+		title: 'Experimenting with GraphQL',
+		slug: 'experimenting-with-graphql',
+		date: '02/03/2019',
+		tags: 'development,project,backend'
+	},
+	{
 		title: 'Unimelb programming proficiency test',
 		slug: 'unimelb-programming-proficiency-test',
 		date: '27/02/2019',

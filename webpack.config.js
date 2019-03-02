@@ -10,7 +10,10 @@ module.exports = {
 	devtool: 'source-map',
 	watch: true,
 	mode: 'development',
-	entry: './src/index.js',
+	entry: {
+		sua: './src/util/su-analytics.js',
+		bundle: './src/index.js'
+	},
 	node: {
 		fs: 'empty',
 		net: 'empty',
@@ -18,7 +21,7 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, 'build'),
-		filename: 'app.bundle.js',
+		filename: '[name].js',
 		publicPath: './',
 	},
 	module: {

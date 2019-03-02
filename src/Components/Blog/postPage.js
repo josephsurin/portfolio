@@ -26,6 +26,10 @@ export default class PostPage extends Component {
 
 	}
 
+	componentDidMount() {
+		window.scrollTo(0, 0)
+	}
+
 	render() {
 		if(!this.state) {
 			return <div className="loading"/>

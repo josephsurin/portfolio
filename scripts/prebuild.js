@@ -24,7 +24,19 @@ var postsMetadata = fs.readdirSync(postsDir)
 		let post = fs.readFileSync(path.join(postsDir, postFilename)).toString()
 		let { attributes } = frontmatter(post)
 		return attributes
-	}).reverse()
+	})
+	.sort((p1, p2) => {
+		let { date: d1 } = p1
+		let { date: d2 } = p2
+		var [ day1, month1, year1 ] = d1.split('/')
+		var [ day2, month2, year2 ] = d2.split('/')
+		if(year1 > year2) return -1
+		if(year2 > year1) return 1
+		if(month1 > month2) return -1
+		if(month2 > month1) return 1
+		if(day1 > day2) return -1
+		if(day2 > day1) return 1
+	})
 
 //write metadata
 var postsFile = `module.exports = ${stringifyObject(postsMetadata, stringifyObjectOpts)}`
