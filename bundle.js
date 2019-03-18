@@ -63056,6 +63056,11 @@ Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED
 /***/ (function(module, exports) {
 
 module.exports = [{
+  title: 'Hosting a Discord bot on Heroku',
+  slug: 'hosting-a-discord-bot-on-heroku',
+  date: '19/03/2019',
+  tags: 'development,project'
+}, {
   title: 'Experimenting with GraphQL',
   slug: 'experimenting-with-graphql',
   date: '02/03/2019',
