@@ -239,6 +239,11 @@ function fetchPostData(slug) {
 /***/ (function(module, exports) {
 
 module.exports = [{
+  title: 'First Semester at Unimelb',
+  slug: 'first-sem-at-unimelb',
+  date: '27/06/2019',
+  tags: 'uni'
+}, {
   title: 'Hosting a Discord bot on Heroku',
   slug: 'hosting-a-discord-bot-on-heroku',
   date: '19/03/2019',
