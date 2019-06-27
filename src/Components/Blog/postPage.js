@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 
 import { formatDate } from '../../util'
 import Tags from './tags'
@@ -56,8 +55,4 @@ export default class PostPage extends Component {
 			})
 		})
 	}
-}
-
-PostPage.propTypes = {
-	match: PropTypes.object.isRequired
 }

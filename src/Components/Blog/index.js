@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 
 import { formatDate } from '../../util'
 import Tags from './tags'
@@ -56,8 +55,4 @@ export default class Blog extends Component {
 			}, 100)
 		})
 	}
-}
-
-Blog.propTypes = {
-	history: PropTypes.object
 }

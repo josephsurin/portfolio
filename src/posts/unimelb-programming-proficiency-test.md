@@ -32,7 +32,7 @@ def is_palindrome(word):
 
 Write a function `frame` that takes a list of strings `wlist` and prints the message in a frame of asterisks `*` such that the longest word in the list is just touching the edges of the frames. For example:
 
-```pyshell
+```python
 > frame(['COMP10001', 'is', 'fun'])
 
 ***********

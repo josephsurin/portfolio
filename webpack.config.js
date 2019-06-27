@@ -1,28 +1,18 @@
-const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-
-var extractPlugin = new ExtractTextPlugin({
-	filename: 'main.css'
-})
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpack = require('webpack')
 
 module.exports = {
 	devtool: 'source-map',
 	watch: true,
 	mode: 'development',
 	entry: {
-		sua: './src/util/su-analytics.js',
-		bundle: './src/index.js'
-	},
-	node: {
-		fs: 'empty',
-		net: 'empty',
-		tls: 'empty'
+		main: './src/index.js'
 	},
 	output: {
-		path: path.resolve(__dirname, 'build'),
-		filename: '[name].js',
-		publicPath: './',
+		path: __dirname + '/build/',
+		filename: '[name].bundle.js',
+        chunkFilename: '[name].bundle.js'
 	},
 	module: {
 		rules: [{
@@ -35,9 +25,11 @@ module.exports = {
 		},
 		{
 			test: /\.(sa|c)ss$/,
-			use: extractPlugin.extract({
-				use: ['css-loader', 'sass-loader']
-			})
+            use: [
+                MiniCssExtractPlugin.loader,
+                'css-loader',
+                'sass-loader'
+            ]
 		},
 		{
 			test: /\.(png|jpe?g|gif|svg|eot|svg|otf|ttf|woff|woff2|md)$/,
@@ -56,10 +48,20 @@ module.exports = {
 		// }
 		]
 	},
+    resolve: {
+        alias: {
+            "react": "preact/compat",
+            "react-dom": "preact/compat"
+        }
+    },
 	plugins: [
-		extractPlugin,
 		new HtmlWebpackPlugin({
-			template: 'src/index.html'
-		})
+			template: 'src/index.html',
+            filename: 'index.html'
+		}),
+        new MiniCssExtractPlugin({
+            filename: 'bundle.css'
+        }),
+        new webpack.optimize.ModuleConcatenationPlugin()
 	]
 }

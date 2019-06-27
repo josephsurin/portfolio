@@ -1,8 +1,12 @@
 import React from 'react'
 import { HashRouter as Router, Route } from 'react-router-dom'
-import Home from './Components/Home'
-import Blog from './Components/Blog'
-import PostPage from './Components/Blog/postPage'
+import loadable from '@loadable/component'
+const Home = loadable(() => import('./Components/Home'))
+const Blog = loadable(() => import('./Components/Blog'))
+const PostPage = loadable(() => import('./Components/Blog/postPage'))
+// import Home from './Components/Home'
+// import Blog from './Components/Blog'
+// import PostPage from './Components/Blog/postPage'
 
 const App = () => {
 	return (

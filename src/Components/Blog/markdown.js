@@ -9,4 +9,6 @@ export const md = require('markdown-it')({
 	html: true,
 	typographer: true,
 	langPrefix: 'codeblock language-'
-}).use(mde).use(mk).use(mdc).use(prism, { plugins: ['toolbar', 'show-language'] })
+}).use(mde).use(mk).use(mdc).use(prism, {
+    plugins: ['toolbar', 'show-language']
+})

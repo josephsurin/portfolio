@@ -8,10 +8,10 @@ const Home = () => {
 				<div className="title">Joseph Surin</div>
 				<div className="subtitle">Student & Developer</div>
 				<div className="link-buttons">
-					<a title="Github" href="https://github.com/josephsurin" className="fa-brands link-button github-button">github</a>
-					<a title="LinkedIn" href="https://www.linkedin.com/in/joseph-surin-0a756b17b/" className="fa-brands link-button linkedin-button">linkedin</a>
-					<a title="Email" href="mailto:joseph.surin@gmail.com" className="fa-solid link-button at-button">at</a>
-					<a title="Resume (PDF)" href="#" className="fa-solid link-button resume-button">file-alt</a>
+					<a title="Github" href="https://github.com/josephsurin" className="icons link-button github-button"></a>
+					<a title="LinkedIn" href="https://www.linkedin.com/in/joseph-surin-0a756b17b/" className="icons link-button linkedin-button"></a>
+					<a title="Email" href="mailto:joseph.surin@gmail.com" className="icons link-button at-button"></a>
+					<a title="Resume (PDF)" href="#" className="icons link-button resume-button"></a>
 				</div>
 				<div className="work-buttons">
 					<Link to="/blog"><div className="work-button blog-button">BLOG</div></Link>
