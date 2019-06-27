@@ -23,7 +23,6 @@
     "mini-css-extract-plugin": "^0.7.0",
     "ncp": "^2.0.0",
     "node-sass": "^4.11.0",
-    "react-router-dom": "^4.3.1",
     "sass-loader": "^7.1.0",
     "stringify-object": "^3.3.0",
     "style-loader": "^0.23.1",
@@ -42,6 +41,7 @@
     "markdown-it-checkbox": "^1.1.0",
     "markdown-it-emoji": "^1.4.0",
     "markdown-it-prism": "2.0.1",
+    "react-router-dom": "^4.3.1",
     "preact": "^10.0.0-beta.3"
   }
 }
