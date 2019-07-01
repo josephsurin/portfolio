@@ -239,6 +239,11 @@ function fetchPostData(slug) {
 /***/ (function(module, exports) {
 
 module.exports = [{
+  title: 'ISITDTU 2019 Quals CTF Writeups',
+  slug: 'isitdtu-2019-quals-ctf-writeups',
+  date: '01/07/2019',
+  tags: 'ctf,infosec,writeup,crypto'
+}, {
   title: 'First Semester at Unimelb',
   slug: 'first-sem-at-unimelb',
   date: '27/06/2019',
