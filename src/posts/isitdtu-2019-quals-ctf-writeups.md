@@ -146,8 +146,6 @@ $$\begin{aligned} n_1 &= p_1q_2 \cr &= p_1(q_1 + \delta) \cr \implies p_1 &= \fr
 
 $$\begin{aligned} n_2 &= q_1p_2 \cr &= q_1(p_1 + \epsilon) \cr \implies p_1 &= \frac{n_2 - q_1\epsilon}{q_1} \end{aligned}$$
 
-$$\begin{aligned} n_2 &= q_1p_2 \cr &= q_1(p_1 + \epsilon) \cr \implies p_1 &= \frac{n_2 - q_1\epsilon}{q_1} \end{aligned}$$
-
 Combining these two results:
 
 $$\begin{aligned} \frac{n_2-q_1\epsilon}{q_1} = \frac{n_1}{q_1+\delta} \cr \implies (n_2-q_1\epsilon)(q_1+\delta) = n_1q_1 \cr \implies n_2q_1 + \delta n_2 - q_1^2 \epsilon - q_1 \epsilon \delta = n_1q_1 \cr \implies q_1^2 \epsilon + q_1(\epsilon \delta+n_1-n_2) - \delta n_2 = 0 \end{aligned}$$
