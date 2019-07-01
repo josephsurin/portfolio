@@ -9,16 +9,16 @@ const PostPage = loadable(() => import('./Components/Blog/postPage'))
 // import PostPage from './Components/Blog/postPage'
 
 const App = () => {
-	return (
-		<Router>
-			<div className="app-wrapper">
-				<Route exact path="/" component={Home} />
-				<Route exact path="/blog" component={Blog} />
-				<Route path="/blog/:slug" component={PostPage} />
-				<Route path="/portfolio" component={Home} />
-			</div>
-		</Router>
-	)
+    return (
+        <Router>
+            <div className="app-wrapper">
+                <Route exact path="/" component={Home} />
+                <Route exact path="/blog" component={Blog} />
+                <Route path="/blog/:slug" component={PostPage} />
+                <Route path="/portfolio" component={Home} />
+            </div>
+        </Router>
+    )
 }
 
 export default App

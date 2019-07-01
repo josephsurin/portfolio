@@ -6,6 +6,6 @@ require('./styles/main.sass')
 import App from './app.js'
 
 render(
-	<App />,
-	document.getElementById('app')
+    <App />,
+    document.getElementById('app')
 )

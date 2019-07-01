@@ -1,13 +1,21 @@
 {
+    "settings": {
+        "react": {
+            "version": "999.999.999"
+        }
+    },
     "env": {
         "es6": true,
-        "node": true,
         "browser": true
     },
     "plugins": [
         "react"
     ],
-    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parser": "babel-eslint",
     "parserOptions": {
         "sourceType": "module",
         "ecmaFeatures": {
@@ -16,9 +24,16 @@
         }
     },
     "rules": {
+        "react/prop-types": 0,
+        "react/jsx-key": 0,
+        "react/no-find-dom-node": 0,
         "indent": [
             "error",
-            "tab"
+            4
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
         ],
         "quotes": [
             "error",

@@ -6,9 +6,9 @@ import './prism-onedark.css'
 import 'katex/dist/katex.min.css'
 
 export const md = require('markdown-it')({
-	html: true,
-	typographer: true,
-	langPrefix: 'codeblock language-'
+    html: true,
+    typographer: true,
+    langPrefix: 'codeblock language-'
 }).use(mde).use(mk).use(mdc).use(prism, {
     plugins: ['toolbar', 'show-language']
 })
