@@ -9,8 +9,8 @@ I had a short look at some challenges from [ISITDTU CTF (2019 quals)](https://ct
 
 #### Challenges:
   - Crypto
-    - [decrypt to me](#decrypt-to-me)
-    - [Easy RSA 2](#easy-rsa-2)
+    - decrypt to me
+    - Easy RSA 2
 
 ## <a name="decrypt-to-me"></a> decrypt to me
 
