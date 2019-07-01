@@ -131,7 +131,7 @@ From this, we can further observe that $p_1q_2 - p_2q_1$ will be small since:
 
 $$\begin{aligned} p_1q_2 - p_2q_1 &= p_1(q_1 + \delta) - (p_1 + \epsilon)q_1 \cr &= p_1q_1 + p_1\delta - p_1q_1 - q_1\epsilon \cr &= p_1\delta - q_1\epsilon \end{aligned}$$
 
-Thus, $n$ can be easily factorised into the two factors $p_1q_2$ and $p2_q1$. We can use [Alpertron's Integer Factorization Calculator](https://www.alpertron.com.ar/ECM.HTM) to do this for us in seconds. Then we get:
+Thus, $n$ can be easily factorised into the two factors $p_1q_2$ and $p_2q_1$. We can use [Alpertron's Integer Factorization Calculator](https://www.alpertron.com.ar/ECM.HTM) to do this for us in seconds. Then we get:
 
 ```python
 n1 = 92593960581478990492272892082797582837598460722110672289472622026362327649808629839901870926342611079306340852878894165246912369940368199994436453135377198629507140256023102013131493810077402487620597574150419252484604398426042348936643985371724093575122287222535733709825807203222224632574777263054682547849
@@ -142,7 +142,7 @@ with `n1 = p1*q2` and `n2 = p2*q1`.
 
 From these two equations, it turns out we can derive a simple quadratic equation in terms of $\epsilon$, $\delta$, $n_1$ and $n_2$ to solve for any one of $p_1$, $p_2$, $q_1$ or $q_2$ :
 
-$$\begin{aligned} n_1 &= p_1q_2 \cr &= p_1(q_1 + \delta) \cr \implies p_1 &= \frac{n_1}{q_1 + \delta} $$
+$$\begin{aligned} n_1 &= p_1q_2 \cr &= p_1(q_1 + \delta) \cr \implies p_1 &= \frac{n_1}{q_1 + \delta} \end{aligned}$$
 
 $$\begin{aligned} n_2 &= q_1p_2 \cr &= q_1(p_1 + \epsilon) \cr \implies p_1 &= \frac{n_2 - q_1\epsilon}{q_1} \end{aligned}$$
 
