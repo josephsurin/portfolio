@@ -249,6 +249,11 @@ module.exports = [{
   date: '27/06/2019',
   tags: 'uni'
 }, {
+  title: 'AngstromCTF 2019 Writeups',
+  slug: 'angstromctf-2019-writeups',
+  date: '23/04/2019',
+  tags: 'ctf,infosec,writeup,crypto,web,misc'
+}, {
   title: 'Hosting a Discord bot on Heroku',
   slug: 'hosting-a-discord-bot-on-heroku',
   date: '19/03/2019',
