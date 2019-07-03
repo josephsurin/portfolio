@@ -85,7 +85,7 @@ pre.codeblock {
   padding: 24px !important;
   border-radius: 10px;
   font-size: 15px;
-  box-shadow: 1px 1px 15px 1px rgba(0, 105, 124, 0.15);
+  box-shadow: 1px 1px 15px 1px rgba(26, 26, 30, 0.55);
   margin: 24px -16px !important;
   overflow-x: auto; }
   pre.codeblock code {
@@ -108,11 +108,16 @@ pre.codeblock {
     pointer-events: none; }
 
 hr {
-  color: rgba(218, 218, 218, 0.6); }
+  color: rgba(202, 202, 202, 0.6);
+  margin: 40px 0; }
+
+h1, h2, h3, h4 {
+  font-family: 'Source Sans Pro';
+  font-weight: 900; }
 
 p code, pre code {
-  background-color: #eeeeee;
-  color: #455b64;
+  background-color: #28282e;
+  color: #7cebff;
   padding: 2px;
   border-radius: 4px; }
 
@@ -213,26 +218,26 @@ table {
           color: #fff; }
 
 .post-page {
-  max-width: 600px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  padding: 2.6rem 1.4rem;
+  padding: 2.6rem 2.4rem;
   font-family: Merriweather;
-  color: #455b64; }
+  color: #cacaca; }
   .post-page .back-button {
     padding: 12px 20px;
-    border: 2px solid #455b64;
+    border: 2px solid #cacaca;
     font-family: 'Source Sans Pro';
     font-weight: 900;
     font-size: 14px;
     text-align: center;
     width: 90px;
     transition: 0.3s ease;
-    color: #455b64;
+    color: #cacaca;
     margin-top: 50px; }
     .post-page .back-button:hover {
       cursor: pointer;
-      background-color: #455b64;
+      background-color: #cacaca;
       color: #fff; }
   .post-page .post-title {
     margin-top: 70px;
@@ -255,7 +260,7 @@ table {
   margin-left: auto;
   margin-right: auto;
   padding: 2.6rem 1.4rem;
-  color: #455b64;
+  color: #cacaca;
   font-family: Merriweather; }
   .blog-container .blog-header {
     margin-top: 120px;
@@ -265,7 +270,7 @@ table {
     margin-top: 40px; }
     .blog-container .posts .post {
       margin-bottom: 30px;
-      border-bottom: 1px solid rgba(218, 218, 218, 0.6); }
+      border-bottom: 1px solid rgba(202, 202, 202, 0.6); }
       .blog-container .posts .post .post-title {
         font-family: 'Source Sans Pro';
         font-weight: 900;
@@ -287,7 +292,7 @@ table {
   .post-tags .post-tag {
     display: inline;
     margin-right: 6px;
-    background-color: #cdcdcd;
+    background-color: #2a2a2d;
     color: #fff;
     padding: 4px;
     border-radius: 4px; }
@@ -303,6 +308,10 @@ table {
   width: 0%;
   background-color: #7cebff;
   transition: all 0.1s ease; }
+
+.app-wrapper {
+  background-color: #1a1a1e;
+  color: #cacaca; }
 
 html, body {
   margin: 0;
