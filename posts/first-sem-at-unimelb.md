@@ -5,6 +5,8 @@ date: 27/06/2019
 tags: uni
 = yaml =
 
+updated: 04/07/2019
+
 I just finished up my first round of exams at Unimelb and so I thought I'd write a bit about how the semester was.
 
 The subjects I took were:
@@ -32,12 +34,12 @@ I picked Japanese as my [breadth](https://students.unimelb.edu.au/admin/course-p
 
 ## Summary Table
 
-| Subject | enjoyability | difficulty | how much I learnt |
-| --- | --- | --- | --- |
-| Foundations of Computing | 5/10 | 2/10 | 2/10 |
-| Calculus II | 6/10 | 4/10 | 4/10 |
-| Linear Algebra | 8/10 | 4/10 | 6/10 |
-| Japanese 7 | 7/10 | 3/10 | 2/10 |
+| Subject | enjoyability | difficulty | how much I learnt | mark |
+| --- | --- | --- | --- | --- |
+| Foundations of Computing | 5/10 | 2/10 | 2/10 | 100/100 |
+| Calculus II | 6/10 | 4/10 | 4/10 | 98/100 |
+| Linear Algebra | 8/10 | 4/10 | 6/10 | 99/100 |
+| Japanese 7 | 7/10 | 3/10 | 2/10 | 90/100 |
 
 ---
 
