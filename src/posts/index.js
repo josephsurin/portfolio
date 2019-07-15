@@ -12,6 +12,12 @@ module.exports = [
 		tags: 'uni'
 	},
 	{
+		title: 'UUTCTF 2019 Writeups',
+		slug: 'uutctf-2019-writeups',
+		date: '28/04/2019',
+		tags: 'ctf,infosec,writeup,web,misc,forensics'
+	},
+	{
 		title: 'AngstromCTF 2019 Writeups',
 		slug: 'angstromctf-2019-writeups',
 		date: '23/04/2019',
