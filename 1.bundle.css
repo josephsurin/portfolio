@@ -29,6 +29,18 @@
 .command-line-prompt > span[data-prompt]:before {
   content: attr(data-prompt); }
 
+pre.diff-highlight > code .token.deleted:not(.prefix),
+pre > code.diff-highlight .token.deleted:not(.prefix) {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: inherit;
+  display: block; }
+
+pre.diff-highlight > code .token.inserted:not(.prefix),
+pre > code.diff-highlight .token.inserted:not(.prefix) {
+  background-color: rgba(0, 255, 128, 0.1);
+  color: inherit;
+  display: block; }
+
 @charset "UTF-8";
 pre[data-line] {
   position: relative;
@@ -368,6 +380,11 @@ div.code-toolbar > .toolbar {
   opacity: 0; }
 
 div.code-toolbar:hover > .toolbar {
+  opacity: 1; }
+
+/* Separate line b/c rules are thrown out if selector is invalid.
+   IE11 and old Edge versions don't support :focus-within. */
+div.code-toolbar:focus-within > .toolbar {
   opacity: 1; }
 
 div.code-toolbar > .toolbar .toolbar-item {

@@ -142,7 +142,7 @@ Then we perform the calculation:
 
 $$\begin{aligned} c^d &\equiv (m^e)^d \pmod n \cr &\equiv m^{ed} \pmod n \cr &\equiv m^{e\frac{g}{e}(1+k\phi(n))} \pmod n \cr &\equiv m^gm^{gk\phi(n)} \pmod n \cr &\equiv m^g(m^{gk})^{\phi(n)} \pmod n \cr &\equiv m^g \pmod n \end{aligned}$$
 
-The second last line follows from [Euler's theorem](https://en.wikipedia.org/wiki/Euler%27s_theorem)
+The last line follows from [Euler's theorem](https://en.wikipedia.org/wiki/Euler%27s_theorem)
 
 To find $m$, we simply take the $g$th root of $c^d \mod n$.
 
