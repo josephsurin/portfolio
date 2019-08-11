@@ -239,6 +239,11 @@ function fetchPostData(slug) {
 /***/ (function(module, exports) {
 
 module.exports = [{
+  title: 'CryptoCTF 2019 Writeups',
+  slug: 'cryptoctf-2019-writeups',
+  date: '11/08/2019',
+  tags: 'ctf,infosec,writeup,crypto'
+}, {
   title: 'ISITDTU 2019 Quals CTF Writeups',
   slug: 'isitdtu-2019-quals-ctf-writeups',
   date: '01/07/2019',
