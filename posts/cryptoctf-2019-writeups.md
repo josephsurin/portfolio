@@ -8,6 +8,7 @@ tags: ctf,infosec,writeup,crypto
 #### Challenges:
   - Crypto
     - Time Capsule
+    - roXen
 
 # Crypto
 
