@@ -322,9 +322,9 @@ Notice that $\sum_{i=j}^k d_i = p_{k+1} - p_j$
 
 So, $e + \sum_{j=0}^{253}\sum_{i=j}^{253} d_i = 254p_{254}$ which gives us the value of the last prime, $p_{254}$.
 
-Similarly, $(e - p_{254}) + \sum_{j=0}^{252}\sum_{i=j}^{253}d_i = 253p_{253}$ which gives us the value of $p_{253}$.
+Similarly, $(e - p_{254}) + \sum_{j=0}^{252}\sum_{i=j}^{252}d_i = 253p_{253}$ which gives us the value of $p_{253}$.
 
-In general, we have $\sum_{i=0}^{n}p_i + \sum_{j=0}^{n-1}\sum_{i=j}^{253}d_i = np_n$. So we can easily recover the primes:
+In general, we have $\sum_{i=0}^{n}p_i + \sum_{j=0}^{n-1}\sum_{i=j}^{n-1}d_i = np_n$. So we can easily recover the primes:
 
 ```python
 def recover_primes(e, diff_vec):
