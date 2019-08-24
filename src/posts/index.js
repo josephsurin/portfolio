@@ -1,5 +1,11 @@
 module.exports = [
 	{
+		title: 'HackCon 2019 Writeups',
+		slug: 'hackcon-2019-writeups',
+		date: '24/08/2019',
+		tags: 'ctf,infosec,writeup,crypto'
+	},
+	{
 		title: 'CryptoCTF 2019 Writeups',
 		slug: 'cryptoctf-2019-writeups',
 		date: '11/08/2019',
