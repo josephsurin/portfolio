@@ -4159,16 +4159,17 @@ var __SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = sharedInternals;
 
 
 var Home = loadable_esm(function () {
-  return __webpack_require__.e(/*! import() */ 4).then(__webpack_require__.bind(null, /*! ./Components/Home */ "./src/Components/Home/index.js"));
+  return __webpack_require__.e(/*! import() */ 6).then(__webpack_require__.bind(null, /*! ./Components/Home */ "./src/Components/Home/index.js"));
 });
 var Blog = loadable_esm(function () {
   return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ./Components/Blog */ "./src/Components/Blog/index.js"));
 });
 var PostPage = loadable_esm(function () {
-  return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./Components/Blog/postPage */ "./src/Components/Blog/postPage.js"));
-}); // import Home from './Components/Home'
-// import Blog from './Components/Blog'
-// import PostPage from './Components/Blog/postPage'
+  return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./Components/Blog/postPage */ "./src/Components/Blog/postPage.js"));
+});
+var PrivatePosts = loadable_esm(function () {
+  return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ./Components/PrivatePosts */ "./src/Components/PrivatePosts/index.js"));
+});
 
 var app_App = function App() {
   return compat_module["default"].createElement(es["HashRouter"], null, compat_module["default"].createElement("div", {
@@ -4187,6 +4188,9 @@ var app_App = function App() {
   }), compat_module["default"].createElement(es["Route"], {
     path: "/portfolio",
     component: Home
+  }), compat_module["default"].createElement(es["Route"], {
+    path: "/privateposts",
+    component: PrivatePosts
   })));
 };
 

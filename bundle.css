@@ -309,6 +309,32 @@ table {
   background-color: #7cebff;
   transition: all 0.1s ease; }
 
+.private-posts-prompt {
+  height: 100vh;
+  background-color: #1a1a1e; }
+  .private-posts-prompt .private-post-password-form {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    margin-top: 20%; }
+    .private-posts-prompt .private-post-password-form label {
+      font-size: 14px;
+      margin-left: 8px; }
+      .private-posts-prompt .private-post-password-form label input {
+        background-color: #cacaca;
+        border: 1px solid #2f2f32;
+        padding: 8px 12px;
+        margin: 8px;
+        border-radius: 4px; }
+    .private-posts-prompt .private-post-password-form input[type="submit"] {
+      background-color: #7cebff;
+      border: none;
+      color: #fff;
+      padding: 8px;
+      border-radius: 4px; }
+      .private-posts-prompt .private-post-password-form input[type="submit"]:hover {
+        cursor: pointer; }
+
 .app-wrapper {
   background-color: #1a1a1e;
   color: #cacaca; }

@@ -900,40 +900,20 @@ webpackContext.id = "./node_modules/prismjs/plugins sync recursive ^\\.\\/.*\\/p
 
 /***/ }),
 
-/***/ "./src/Components/Blog/postPage.js":
-/*!*****************************************************!*\
-  !*** ./src/Components/Blog/postPage.js + 1 modules ***!
-  \*****************************************************/
-/*! exports provided: default */
-/*! ModuleConcatenation bailout: Cannot concat with ./src/Components/Blog/tags.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./src/Components/Blog/util.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./src/util/index.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/preact/compat/dist/compat.module.js */
-/*! ModuleConcatenation bailout: Cannot concat with ./node_modules/react-router-dom/es/index.js */
+/***/ "./src/Components/Blog/markdown.js":
+/*!*****************************************!*\
+  !*** ./src/Components/Blog/markdown.js ***!
+  \*****************************************/
+/*! exports provided: md */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: ./node_modules/preact/compat/dist/compat.module.js + 2 modules
-var compat_module = __webpack_require__("./node_modules/preact/compat/dist/compat.module.js");
-
-// EXTERNAL MODULE: ./node_modules/react-router-dom/es/index.js + 29 modules
-var es = __webpack_require__("./node_modules/react-router-dom/es/index.js");
-
-// EXTERNAL MODULE: ./src/util/index.js
-var util = __webpack_require__("./src/util/index.js");
-
-// EXTERNAL MODULE: ./src/Components/Blog/tags.js
-var Blog_tags = __webpack_require__("./src/Components/Blog/tags.js");
-
-// EXTERNAL MODULE: ./src/Components/Blog/prism-onedark.css
-var prism_onedark = __webpack_require__("./src/Components/Blog/prism-onedark.css");
-
-// EXTERNAL MODULE: ./node_modules/katex/dist/katex.min.css
-var katex_min = __webpack_require__("./node_modules/katex/dist/katex.min.css");
-
-// CONCATENATED MODULE: ./src/Components/Blog/markdown.js
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "md", function() { return md; });
+/* harmony import */ var _prism_onedark_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./prism-onedark.css */ "./src/Components/Blog/prism-onedark.css");
+/* harmony import */ var _prism_onedark_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_prism_onedark_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var katex_dist_katex_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! katex/dist/katex.min.css */ "./node_modules/katex/dist/katex.min.css");
+/* harmony import */ var katex_dist_katex_min_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(katex_dist_katex_min_css__WEBPACK_IMPORTED_MODULE_1__);
 var mk = __webpack_require__(/*! @iktakahiro/markdown-it-katex */ "./node_modules/@iktakahiro/markdown-it-katex/index.js");
 
 var mde = __webpack_require__(/*! markdown-it-emoji */ "./node_modules/markdown-it-emoji/index.js");
@@ -951,117 +931,6 @@ var md = __webpack_require__(/*! markdown-it */ "./node_modules/markdown-it/inde
 }).use(mde).use(mk).use(mdc).use(prism, {
   plugins: ['toolbar', 'show-language']
 });
-// EXTERNAL MODULE: ./src/Components/Blog/util.js
-var Blog_util = __webpack_require__("./src/Components/Blog/util.js");
-
-// CONCATENATED MODULE: ./src/Components/Blog/postPage.js
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return postPage_PostPage; });
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-
-
-
-var postPage_PostPage =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(PostPage, _Component);
-
-  function PostPage(props) {
-    var _this;
-
-    _classCallCheck(this, PostPage);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(PostPage).call(this, props));
-    var postPageProps = Blog_util["simpleStore"].get('postPageProps'); //prioritise using post data from state
-
-    if (postPageProps) {
-      _this.state = {
-        postMeta: Object.assign({}, postPageProps.postMeta),
-        postBody: postPageProps.postBody
-      };
-    } else {
-      _this.fetchPostData();
-    }
-
-    return _this;
-  }
-
-  _createClass(PostPage, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      window.scrollTo(0, 0);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      if (!this.state) {
-        return compat_module["default"].createElement("div", {
-          className: "loading"
-        });
-      }
-
-      var _this$state = this.state,
-          _this$state$postMeta = _this$state.postMeta,
-          title = _this$state$postMeta.title,
-          date = _this$state$postMeta.date,
-          tags = _this$state$postMeta.tags,
-          postBody = _this$state.postBody;
-      return compat_module["default"].createElement("div", {
-        className: "post-page"
-      }, compat_module["default"].createElement(es["Link"], {
-        to: "/blog",
-        className: "back-button"
-      }, "BACK"), compat_module["default"].createElement("div", {
-        className: "post-title"
-      }, title), compat_module["default"].createElement("div", {
-        className: "post-date"
-      }, Object(util["formatDate"])(date)), compat_module["default"].createElement(Blog_tags["default"], {
-        tags: tags
-      }), compat_module["default"].createElement("hr", null), compat_module["default"].createElement("div", {
-        className: "post-body",
-        dangerouslySetInnerHTML: {
-          __html: md.render(postBody || '')
-        }
-      }));
-    }
-  }, {
-    key: "fetchPostData",
-    value: function fetchPostData() {
-      var _this2 = this;
-
-      Object(Blog_util["fetchPostData"])(this.props.match.params.slug).then(function (postPageProps) {
-        _this2.setState({
-          postMeta: Object.assign({}, postPageProps.postMeta),
-          postBody: postPageProps.postBody
-        });
-      });
-    }
-  }]);
-
-  return PostPage;
-}(compat_module["Component"]);
-
-
 
 /***/ }),
 
@@ -1102,76 +971,6 @@ var Tags = function Tags(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Tags);
-
-/***/ }),
-
-/***/ "./src/Components/Blog/util.js":
-/*!*************************************!*\
-  !*** ./src/Components/Blog/util.js ***!
-  \*************************************/
-/*! exports provided: simpleStore, fetchPostData */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "simpleStore", function() { return simpleStore; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPostData", function() { return fetchPostData; });
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-/* SIMPLE STORE */
-var SimpleStore =
-/*#__PURE__*/
-function () {
-  function SimpleStore() {
-    _classCallCheck(this, SimpleStore);
-
-    this.state = {};
-  }
-
-  _createClass(SimpleStore, [{
-    key: "set",
-    value: function set(k, v) {
-      this.state[k] = v;
-    }
-  }, {
-    key: "get",
-    value: function get(k) {
-      return this.state[k];
-    }
-  }]);
-
-  return SimpleStore;
-}();
-
-var simpleStore = new SimpleStore();
-/* FETCH POST DATA */
-
-var postsBuildDir = 'posts/';
-
-var frontmatter = __webpack_require__(/*! front-matter */ "./node_modules/front-matter/index.js");
-
-function fetchPostData(slug) {
-  return new Promise(function (resolve, reject) {
-    var postFilepath = "".concat(postsBuildDir).concat(slug, ".md");
-    fetch(postFilepath).then(function (x) {
-      return x.text();
-    }).then(function (rawMD) {
-      var _frontmatter = frontmatter(rawMD),
-          attributes = _frontmatter.attributes,
-          body = _frontmatter.body;
-
-      var postPageProps = {
-        postMeta: attributes,
-        postBody: body
-      };
-      return resolve(postPageProps);
-    })["catch"](reject);
-  });
-}
 
 /***/ }),
 
