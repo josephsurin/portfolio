@@ -365,13 +365,16 @@ function (_Component) {
       var value = this.state.value;
       var pps_url = 'https://privatepost-server.herokuapp.com/files/' + sha1(value);
       fetch(pps_url).then(function (x) {
-        return x.text();
+        if (x.status == 404) {
+          alert('Invalid Password');
+          return null;
+        } else {
+          return x.text();
+        }
       }).then(function (rawMD) {
-        _this2.setState({
+        if (rawMD) _this2.setState({
           postData: frontmatter(rawMD)
         });
-      })["catch"](function () {
-        return alert('Invalid Password');
       });
     }
   }]);
