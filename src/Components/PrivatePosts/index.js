@@ -51,10 +51,16 @@ export default class PrivatePosts extends Component {
         var { value } = this.state
         const pps_url = 'https://privatepost-server.herokuapp.com/files/' + sha1(value)
         fetch(pps_url)
-            .then(x => x.text())
-            .then(rawMD => {
-                this.setState({ postData: frontmatter(rawMD) })    
+            .then(x => {
+                if(x.status == 404) {
+                    alert('Invalid Password')
+                    return null
+                } else {
+                    return x.text()
+                }
             })
-            .catch(() => alert('Invalid Password'))
+            .then(rawMD => {
+                if(rawMD) this.setState({ postData: frontmatter(rawMD) })    
+            })
     }
 }
