@@ -7,7 +7,8 @@
     "prebuild": "node ./scripts/prebuild",
     "build": "webpack --config webpack.config.js",
     "build-prod": "rm -rf build && mkdir build && npm run prebuild && webpack --config webpack.config.prod.js",
-    "start": "live-server build"
+    "start": "live-server build",
+    "deploy": "npm run build-prod && gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
