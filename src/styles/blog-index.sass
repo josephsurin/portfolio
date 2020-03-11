@@ -1,0 +1,60 @@
+@import 'vars'
+
+.blog-container
+    +break-medium
+      margin-left: $med-header-width
+    +break-small
+      margin-left: auto
+      padding: 2rem
+    margin-left: $header-width
+    margin-right: auto
+    padding: 2.6rem 6.4rem
+    color: $light-grey
+    font-family: Merriweather
+    .blog-header
+        margin-top: 120px
+        font-size: 24px
+        font-family: 'Source Sans Pro'
+    .posts
+        margin-top: 40px
+        .post
+            margin-bottom: 30px
+            border-bottom: 1px solid transparentize($light-grey, 0.4)
+            .post-title
+                font-family: 'Source Sans Pro'
+                font-weight: 900
+                font-size: 40px
+                color: $light-blue
+                &:hover
+                    cursor: pointer
+                    color: $blue
+            .post-date
+                margin-top: 8px
+                font-family: Merriweather
+                font-size: 12px
+            .post-spoiler
+                margin: 8px 0
+        
+
+.post-tags
+    font-size: 12px
+    margin: 16px 0
+    .post-tag
+        display: inline
+        margin-right: 6px
+        background-color: darken($grey, 2%)
+        color: $white
+        padding: 4px
+        border-radius: 4px
+        &:hover
+            cursor: pointer
+            background-color: $blue
+
+.progress-loader
+    position: absolute
+    top: 0
+    left: 0
+    height: 5px
+    width: 0%
+    background-color: $light-blue
+    transition: all 0.1s ease

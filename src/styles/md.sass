@@ -1,0 +1,81 @@
+@import 'vars'
+
+pre.codeblock
+	position: relative
+	padding: 24px !important
+	border-radius: 10px
+	font-size: 15px
+	box-shadow: 1px 1px 15px 1px transparentize($black, 0.45)
+	margin: 24px -16px !important
+	overflow-x: auto
+	code
+		background-color: transparent
+
+.code-toolbar
+	.toolbar
+		opacity: 1 !important
+		.toolbar-item
+			span
+				position: absolute
+				right: -16px
+				top: 0
+				padding: 4px 10px
+				background-color: $light-blue
+				border-top-right-radius: 10px
+				border-top-left-radius: 0
+				border-bottom-left-radius: 10px
+				border-bottom-right-radius: 0
+				font-family: Consolas
+				color: $white
+				pointer-events: none
+
+hr
+	color: transparentize($light-grey, 0.4)
+	margin: 40px 0
+
+h1, h2, h3, h4
+	font-family: 'Source Sans Pro'
+	font-weight: 900
+
+p code, pre code
+	background-color: lighten($black, 6%)
+	color: $light-blue
+	padding: 2px
+	border-radius: 4px
+
+a
+	color: $light-blue
+	font-weight: bold
+	text-decoration: none
+	outline: none
+	&:hover
+		color: $blue
+
+blockquote
+	margin: 24px -28px
+	padding: 1px 14px
+	font-family: Merriweather
+	font-style: italic
+	font-size: 18px
+	border-left: 4px solid $light-blue
+
+table 
+	display: block
+	width: 100%
+	overflow: auto
+	border-spacing: 0
+	border-collapse: collapse
+	margin-bottom: 20px
+	thead	
+		font-weight: 600
+		tr th
+			padding: 6px 13px
+			border: 1px solid lighten($grey, 35%)
+	tbody
+		tr
+			padding: 6px 13px
+			border-top: 1px solid #c6cbd1
+			
+		td	
+			padding: 6px 13px
+			border: 1px solid lighten($grey, 35%)

@@ -1,0 +1,64 @@
+@import 'vars'
+
+.header-container
+  height: 100vh
+  width: $header-width
+  position: fixed
+  background: darken($black, 3%)
+
+  +break-medium
+    width: $med-header-width
+
+  +break-small
+    width: 100%
+    position: relative
+    height: auto
+
+  .picture
+    .picture-img
+      margin-top: 40px
+      margin-left: 50%
+      transform: translateX(-50%)
+      border: 3px solid white
+      border-radius: 50%
+      width: $header-width/2
+      height: auto
+
+      +break-small
+        width: 20%
+
+  .name
+    width: 100%
+    margin-top: 24px
+    font-family: 'Source Code Pro'
+    font-weight: 900
+    font-size: 1.2em
+    text-align: center
+    color: $white
+
+  .about
+    font-size: 0.8em
+    font-weight: 400
+    font-family: 'Source Code Pro'
+    text-align: center
+    padding: 0 30px
+    margin-top: 8px
+    margin-bottom: 24px
+
+  ul
+    list-style: none
+    padding: 0
+    li
+      padding: 0
+      text-indent: 0
+      border-top: 1px solid $grey
+      border-bottom: 1px solid $grey
+      padding: 24px 0
+      text-align: center
+      color: $light-grey
+      font-family: 'Source Code Pro'
+      &:hover
+        color: $light-blue
+        background: darken($black, 2%)
+      i
+        margin-right: 10px

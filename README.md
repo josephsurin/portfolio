@@ -1,5 +1,4 @@
-# [josephsurin.js.org](https://josephsurin.js.org)
+# [josephsurin.me](https://josephsurin.me)
 
-My personal portfolio and blog; a collection of my projects, thoughts and experiences.
+My personal blog; a collection of my projects, CTF writeups and random stuff!
 
-currently a work in progress

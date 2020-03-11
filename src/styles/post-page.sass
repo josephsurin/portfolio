@@ -1,0 +1,51 @@
+@import 'vars'
+
+.post-page
+    +break-medium
+      margin-left: $med-header-width
+    +break-small
+      margin-left: auto
+      padding: 2rem
+    margin-left: $header-width
+    margin-right: auto
+    padding: 2.6rem 4.4rem
+    font-family: Merriweather
+    color: $light-grey
+    .back-button
+        padding: 4px
+        font-family: 'Source Sans Pro'
+        font-weight: 900
+        font-size: 14px
+        text-align: center
+        width: 90px
+        transition: 0.3s ease
+        color: $light-grey
+        &:hover
+            cursor: pointer
+            color: $white
+    .post-title
+        margin-top: 30px
+        font-family: 'Source Sans Pro'
+        line-height: 42px
+        font-weight: 900
+        color: $light-blue
+        font-size: 48px
+    .post-date
+        font-family: Merriweather
+        margin-top: 6px
+        font-size: 12px
+    .post-body
+        margin-top: 40px
+        margin-bottom: 80px
+        word-wrap: break-word
+    .blog-post-footer
+      width: 100%
+      font-family: Merriweather
+      font-size: 14px
+      a
+        margin: 24px
+      .prev-link
+        float: left
+      .next-link
+        float: right
+
