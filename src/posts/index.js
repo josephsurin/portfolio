@@ -18,12 +18,6 @@ module.exports = [
 		tags: 'ctf,infosec,writeup,crypto'
 	},
 	{
-		title: 'First Semester at Unimelb',
-		slug: 'first-sem-at-unimelb',
-		date: '27/06/2019',
-		tags: 'uni'
-	},
-	{
 		title: 'UUTCTF 2019 Writeups',
 		slug: 'uutctf-2019-writeups',
 		date: '28/04/2019',
