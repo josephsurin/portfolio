@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import '../styles/index.sass'
 import '../styles/blog-index.sass'
 
 import Layout from '../components/layout'
