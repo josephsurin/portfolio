@@ -35,7 +35,9 @@ module.exports = {
                         resolve: 'gatsby-remark-katex',
                         options: { displayMode: false }
                     },
-                    'gatsby-remark-copy-linked-files',
+                    {
+                        resolve: 'gatsby-remark-copy-linked-files',
+                    },
                     {
                         resolve: 'gatsby-remark-images',
                         options: { maxWidth: 600 }
