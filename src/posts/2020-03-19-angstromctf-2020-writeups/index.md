@@ -958,10 +958,7 @@ def phi(p):
 def modtet(a, b, p):
     if b == 0: return 1
     if b == 1: return a % p
-    # g = gcd(pow(a, int(log2(p)), p), p)
-    # pg = phi(p//g)
     t = phi(p)
-    # if g == p: return 0
     return pow(a, modtet(a, b-1, t), p)
 
 def solve(a, b, p):
