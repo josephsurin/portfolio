@@ -910,10 +910,7 @@ c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
 <span class="token keyword">def</span> <span class="token function">modtet</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> b <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span> <span class="token keyword">return</span> <span class="token number">1</span>
     <span class="token keyword">if</span> b <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span> <span class="token keyword">return</span> a <span class="token operator">%</span> p
-    <span class="token comment"># g = gcd(pow(a, int(log2(p)), p), p)</span>
-    <span class="token comment"># pg = phi(p//g)</span>
     t <span class="token operator">=</span> phi<span class="token punctuation">(</span>p<span class="token punctuation">)</span>
-    <span class="token comment"># if g == p: return 0</span>
     <span class="token keyword">return</span> <span class="token builtin">pow</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> modtet<span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> t<span class="token punctuation">)</span><span class="token punctuation">,</span> p<span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">solve</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> p<span class="token punctuation">)</span><span class="token punctuation">:</span>
