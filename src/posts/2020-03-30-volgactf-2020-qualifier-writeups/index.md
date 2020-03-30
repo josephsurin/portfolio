@@ -127,9 +127,9 @@ We get the two Java source code files `ServeComplaintServlet.java` and `ServeScr
 
 The `ServeComplaintServlet` class doesn't have anything interesting in it, so we don't include it. However, the `ServeScreenshotServlet` class handles a route which allows for file upload.
 
-`ServeScreenshotServlet.java``
+`ServeScreenshotServlet.java`:
 
-```
+```java
 // Decompiled by Jad v1.5.8e. Copyright 2001 Pavel Kouznetsov.
 // Jad home page: http://www.geocities.com/kpdus/jad.html
 // Decompiler options: packimports(3) 
