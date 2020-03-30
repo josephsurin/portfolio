@@ -569,12 +569,7 @@ $$m^{p-1} \equiv (m^2)^{\frac{p-1}{2}} \equiv (g^{2k+1})^{\frac{p-1}{2}} \equiv 
 which implies $g^{\frac{p-1}{2}} \equiv 1 \pmod p$. But this contradicts the fact that $g$ is a generator for $\mathbb{F}_p^*$ as there can only be one value of $l$ with $0 \leq l < p-1$ such that $g^l \equiv 1 \pmod p$ (that value is $0$).
 
 Next, we let $a$ and $b$ be quadratic residues modulo $p$, and let $c$ and $d$ be quadratic nonresidues modulo $p$. We can write
-$$\begin{aligned}
-a &\equiv x^2 \pmod p \\
-b &\equiv y^2 \pmod p \\
-c &\equiv w^{2j+1} \pmod p \\
-d &\equiv z^{2k+1} \pmod p
-\end{aligned}$$
+$$\begin{aligned} a &\equiv x^2 \pmod p \\ b &\equiv y^2 \pmod p \\ c &\equiv w^{2j+1} \pmod p \\ d &\equiv z^{2k+1} \pmod p \end{aligned}$$
 
 To prove (i), we see that
 $$ab \equiv x^2 y^2 \equiv (xy)^2 \pmod p$$
