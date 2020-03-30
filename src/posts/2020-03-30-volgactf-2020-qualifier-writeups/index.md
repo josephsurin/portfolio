@@ -534,6 +534,7 @@ Before we attempt to find the vulnerability in the challenge, we must first unde
 $\mathbb{F}_p$ denotes the [ring](https://en.wikipedia.org/wiki/Ring_(mathematics)) of integers modulo $p$. $\mathbb{F}_p^*$ denotes the [group](https://en.wikipedia.org/wiki/Group_(mathematics)) of [units](https://en.wikipedia.org/wiki/Unit_(ring_theory)) modulo $p$, that is, the set $\{1, 2, 3, \ldots, p - 1 \}$ (because $p$ is prime).
 
 An element $g \in \mathbb{F}_p^*$ is called a generator of $\mathbb{F}_p^*$ if its powers generate every element of $\mathbb{F}_p^*$. i.e.
+
 $$\mathbb{F}_p^* = \{1, g, g^2, g^3, \ldots, g^{p-2} \}$$
 
 If $p$ is prime, such an element always exists.
@@ -545,10 +546,13 @@ The ElGamal cryptosystem is a public key cryptosystem whose security is based on
 **Key Generation**: Alice chooses a large prime number $p$ and a number $g \in \mathbb{F}_p^*$ that is a generator for $\mathbb{F}_p^*$. She then chooses a secret number $x$ and computes $y = g^x \pmod p$. She publishes $(g, p, y)$ as her public key.
 
 **Encryption**: Suppose Bob wants to send Alice a message $m$ using Alice's public key. He generates a random number $r$ such that $1 \leq r < p$. He then computes
+
 $$c_1 \equiv g^r \pmod p \text{\hspace{0.2in} and \hspace{0.2in}} c_2 \equiv my^r \pmod p$$
+
 and sends $(c_1, c_2)$ as the ciphertext.
 
 **Decryption**: Decryption isn't involved in this challenge, but it isn't hard to show that Alice can retrieve the plaintext by computing
+
 $$m \equiv c_2(c_1^x)^{-1} \pmod p$$
 
 #### Quadratic Residues
@@ -563,24 +567,35 @@ $$m \equiv c_2(c_1^x)^{-1} \pmod p$$
 *Proof.* This proof uses [Fermat's Little Theorem](https://en.wikipedia.org/wiki/Fermats_little_theorem) which states that $a^{p-1} \equiv 1 \pmod p$ for prime $p$ and for integers $a$ such that $p$ does not divide $a$.
 
 Let $g \in \mathbb{F}_p^*$ be a generator for $\mathbb{F}_p^*$. We claim that even powers of $g$ are quadratic residues modulo $p$. This claim can be proved with a proof by contradiction. Suppose that $g^{2k+1}$ is a quadratic residue modulo $p$. Then
+
 $$g^{2k+1} \equiv m^2 \pmod p$$
+
 for some integer $m$. From Fermat's Little Theorem, we know that $m^{p-1} \equiv 1 \pmod p$. So
+
 $$m^{p-1} \equiv (m^2)^{\frac{p-1}{2}} \equiv (g^{2k+1})^{\frac{p-1}{2}} \equiv g^{k(p-1)} \cdot g^{\frac{p-1}{2}} \equiv (g^{p-1})^k \cdot g^{\frac{p-1}{2}} \equiv g^{\frac{p-1}{2}} \pmod p$$
+
 which implies $g^{\frac{p-1}{2}} \equiv 1 \pmod p$. But this contradicts the fact that $g$ is a generator for $\mathbb{F}_p^*$ as there can only be one value of $l$ with $0 \leq l < p-1$ such that $g^l \equiv 1 \pmod p$ (that value is $0$).
 
 Next, we let $a$ and $b$ be quadratic residues modulo $p$, and let $c$ and $d$ be quadratic nonresidues modulo $p$. We can write
+
 $$\begin{aligned} a &\equiv x^2 \pmod p \\ b &\equiv y^2 \pmod p \\ c &\equiv w^{2j+1} \pmod p \\ d &\equiv z^{2k+1} \pmod p \end{aligned}$$
 
 To prove (i), we see that
+
 $$ab \equiv x^2 y^2 \equiv (xy)^2 \pmod p$$
+
 and so $ab$ is a quadratic residue modulo $p$.
 
 To prove (ii), we see that
+
 $$ac \equiv x^2w^{2j+1} \pmod p$$
+
 which cannot be expressed to an even power, hence, is a quadratic nonresidue modulo $p$.
 
 Tp prove (iii), we see that
+
 $$cd \equiv w^{2j+1}z^{2k+1} \equiv wz^{2j + 2k + 2} \equiv (wz^{j+k+1})^2 \pmod p$$
+
 and so $cd$ is a quadratic residue modulo $p$.
 
 #### Solving the challenge
