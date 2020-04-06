@@ -56,8 +56,9 @@ drwxrwxrwt   1 root root 4096 Apr  6 03:18 tmp
 drwxr-xr-x   1 root root 4096 Mar 11 21:03 usr
 drwxr-xr-x   1 root root 4096 Apr  1 14:41 var</code></pre></div>
 <p>Using the same technique, we get the <code>flag.file</code> file which contains:</p>
-<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">1f8b0808de36755e0003666c61672e747874004b2c4d2e49ab56c93036348c0fce30f08ecf358eaf72484989ace502005a5da5461b000000</code></pre></div>
-<p>This is a gzip compressed, we can read this contents with</p>
+<div class="gatsby-highlight" data-language="text"><pre class="language-text"><code class="language-text">1f8b0808de36755e0003666c61672e747874004b2c4d2e49ab56c9303634
+8c0fce30f08ecf358eaf72484989ace502005a5da5461b000000</code></pre></div>
+<p>This is a gzip compressed file hexdump, we can read this contents with</p>
 <div class="gatsby-highlight" data-language="bash"><pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> 1f8b0808de36755e0003666c61672e747874004b2c4d2e49ab56c93036348c0fce30f08ecf358eaf72484989ace502005a5da5461b000000 <span class="token operator">|</span> xxd -r -p <span class="token operator">|</span> zcat -
 auctf<span class="token punctuation">{</span><span class="token variable">$h311_Sh0K_m3_z</span>@ddY<span class="token punctuation">}</span></code></pre></div>
 <hr>
