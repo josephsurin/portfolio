@@ -67,10 +67,11 @@ drwxr-xr-x   1 root root 4096 Apr  1 14:41 var
 Using the same technique, we get the `flag.file` file which contains:
 
 ```
-1f8b0808de36755e0003666c61672e747874004b2c4d2e49ab56c93036348c0fce30f08ecf358eaf72484989ace502005a5da5461b000000
+1f8b0808de36755e0003666c61672e747874004b2c4d2e49ab56c9303634
+8c0fce30f08ecf358eaf72484989ace502005a5da5461b000000
 ```
 
-This is a gzip compressed, we can read this contents with
+This is a gzip compressed file hexdump, we can read this contents with
 
 ```bash
 $ echo 1f8b0808de36755e0003666c61672e747874004b2c4d2e49ab56c93036348c0fce30f08ecf358eaf72484989ace502005a5da5461b000000 | xxd -r -p | zcat -
