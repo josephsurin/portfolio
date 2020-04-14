@@ -78,7 +78,7 @@ $$a_0 + 2a_1 + 2^2a_2 + \cdots + 2^{63}a_{63} = v_2$$
 
 We can then write the equations $p(1) = v_1, p(2) = v_2, \ldots, p(64) = v_{64}$ in matrix form:
 
-$$\begin{bmatrix} 1 & 1 & 1^2 &\ldots & 1^{63} \\ 1 & 2 & 2^2 & \ldots & 2^{63} \\ \vdots & \ddots & & & \vdots \\ 1 & 64 & 64^2 & \ldots & 64^{64} \end{bmatrix}\begin{bmatrix} a_0 \\ a_1 \\ \vdots \\ a_{63} \end{bmatrix} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_{63} \end{bmatrix}$$
+$$\begin{bmatrix} 1 & 1 & 1^2 &\ldots & 1^{63} \\ 1 & 2 & 2^2 & \ldots & 2^{63} \\ \vdots & \ddots & & & \vdots \\ 1 & 64 & 64^2 & \ldots & 64^{63} \end{bmatrix}\begin{bmatrix} a_0 \\ a_1 \\ \vdots \\ a_{63} \end{bmatrix} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_{63} \end{bmatrix}$$
 
 So once we get the values $(x, p(x))$, we simply need to solve for the coefficient vector. This can easily be done by taking the inverse of the big matrix on the left and left multiplying it with the values matrix on the right hand side of the equation. That is,
 
