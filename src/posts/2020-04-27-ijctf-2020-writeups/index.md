@@ -255,13 +255,13 @@ $$\mathbf{e_0} = \begin{bmatrix} A &\ldots &F &G &H &I &J &K  &\ldots  &Z &1\\ 0
 
 With 31 of these vectors, we can set up the matrix equation:
 
-$$\begin{bmatrix} \mathbf{e_0} \\ \mathbf{e_2} \\ \vdots \\ \mathbf{e_{30}} \end{bmatrix}\begin{bmatrix} A \\ B \\ \vdots \\Z \\ g \end{bmatrix} \equiv \mathbf{0} \pmod{26}$$
+$$\begin{bmatrix} \mathbf{e_0} \\ \mathbf{e_1} \\ \vdots \\ \mathbf{e_{30}} \end{bmatrix}\begin{bmatrix} A \\ B \\ \vdots \\Z \\ g \end{bmatrix} \equiv \mathbf{0} \pmod{26}$$
 
 where $\mathbf{e_i}$ is the row vector representing the $ith$ equation and $g$ is some value we are not particularly concerned about.
 
-Our problem now reduces down to solving a system of linear congruences modulo 26. We see that the variables vector $(A, B, \ldots, Z, g)$ is any vector in the kernel of the equations matrix. We can solve this by using the equations
+Our problem now reduces down to solving a system of linear congruences modulo 26. We see that the variables vector $(A, B, \ldots, Z, g)$ is any vector in the kernel of the equations matrix. We can solve this by using the congruences
 
-$$\begin{bmatrix} \mathbf{e_0} \\ \mathbf{e_2} \\ \vdots \\ \mathbf{e_{30}} \end{bmatrix}\begin{bmatrix} A \\ B \\ \vdots \\Z \\ g \end{bmatrix} \equiv \mathbf{0} \pmod{2}\quad \text{and} \quad \begin{bmatrix} \mathbf{e_0} \\ \mathbf{e_2} \\ \vdots \\ \mathbf{e_{30}} \end{bmatrix}\begin{bmatrix} A \\ B \\ \vdots \\Z \\ g \end{bmatrix} \equiv \mathbf{0} \pmod{13}$$
+$$\begin{bmatrix} \mathbf{e_0} \\ \mathbf{e_1} \\ \vdots \\ \mathbf{e_{30}} \end{bmatrix}\begin{bmatrix} A \\ B \\ \vdots \\Z \\ g \end{bmatrix} \equiv \mathbf{0} \pmod{2}\quad \text{and} \quad \begin{bmatrix} \mathbf{e_0} \\ \mathbf{e_1} \\ \vdots \\ \mathbf{e_{30}} \end{bmatrix}\begin{bmatrix} A \\ B \\ \vdots \\Z \\ g \end{bmatrix} \equiv \mathbf{0} \pmod{13}$$
 
 We take the basis vectors of the kernel of the equations matrix in $\mathbb{F}_2$ and the basis vectors of the kernel of the equations matrix in $\mathbb{F}_{13}$ and combine their results to get solutions in $\mathbb{Z/26Z}$. The nullity of the matrices in each ring is 2, so there are $26^4$ different possible linear combinations to try (although we could probably reduce this number with a bit more work). We write
 
