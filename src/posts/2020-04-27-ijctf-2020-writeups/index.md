@@ -247,7 +247,7 @@ $$\begin{aligned} T - s - I &\equiv 0 \pmod{26} \\ J - I - F - 1 &\equiv 0 \pmod
 
 We continue this process to get 31 equations.
 
-To represent the equations, we use a 31x27 matrix with each row representing a single equation. Each row is a vector of size 27 and contains only elements in $\{-2, -1, 0, 1, 2\}$. The first element of each row vector represents the coefficient of $A$, the second represents the coefficient of $B$ and so on, up to the 26th element which represents the coefficient of $Z$. The 27th element of each row vector is always `1` and represents the shift by one in each equation.
+To represent the equations, we use a 31x27 matrix with each row representing a single equation. Each row is a vector of size 27 and contains only elements in $\{-2, -1, 0, 1\}$. The first element of each row vector represents the coefficient of $A$, the second represents the coefficient of $B$ and so on, up to the 26th element which represents the coefficient of $Z$. The 27th element of each row vector is always `1` and represents the shift by one in each equation.
 
 As an example, the equation $J - I - F - 1 = 0$ is represented by the row vector of size 27 (the top row containing letters is there for illustration purposes):
 
