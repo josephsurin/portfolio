@@ -1,6 +1,6 @@
 ---
 path: /posts/2020-05-13-sharkyctf-2020-writeups
-title: SharkCTF 2020 Writeups
+title: SharkyCTF 2020 Writeups
 date: 2020-05-13
 tags: ctf,infosec,writeup,crypto
 ---
