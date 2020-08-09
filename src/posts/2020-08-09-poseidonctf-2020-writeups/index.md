@@ -82,29 +82,18 @@ We can describe this using a truth table:
 | $1$   | $1$   | $0$   | $1$     |
 | $1$   | $1$   | $1$   | $1$     |
 
-Since the input bits are seemingly random, it becomes apparent that the XOR value will be $1$ more often than $0$. Thankfully, we're given 256 encryptions of the same message! This means we can determine each bit of the message and therefore recover the entire message.
+Since the input bits are seemingly random, it becomes apparent that the XOR value will be $0$ less often than $1$. Thankfully, we're given 256 encryptions of the same message! This means we can determine each bit of the message and therefore recover the entire message.
 
-We'll do this by analysing all 256 ciphertexts bit by bit. For each bit position in the message, let $b$ be the value that occurs the most across all 256 ciphertexts. Then, it is very very likely that this bit satisfies
-
-$$b = f \oplus 1$$
-
-where $f$ is the flag bit. So we just need to compute $b \oplus 1$ for each bit to recover the flag.
+We'll do this by analysing all 256 ciphertexts bit by bit. For each bit position in the message, let $b$ be the value that occurs the least across all 256 ciphertexts. Then, it is very very likely that this bit is the flag bit we are interested in.
 
 **Solve script:**
 
 ```python
 cts = open('./output.txt').read().splitlines()
 Z = zip(*cts)
-
-def most_freq(lst):
-    return 0 if lst.count('0') > lst.count('1') else 1
-
-flag = ''
-for B in Z:
-    b = most_freq(B)
-    f = b^1
-    flag += str(f)
-
+def least_freq(lst):
+    return '1' if lst.count('0') > lst.count('1') else '0'
+flag = ''.join(least_freq(B) for B in Z)
 print(bytes.fromhex(hex(int(flag, 2))[2:]).decode())
 ```
 
