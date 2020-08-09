@@ -103,7 +103,7 @@ Flag: `Poseidon{7h3_u53_0f_pr0b4b1l17y_15_57r0n6}`
 
 # discrete log <a name="discrete-log"></a>
 
-### crypto (957pts)
+### crypto (908pts)
 
 > I heard some cryptosystem uses discrete logarithm.
 >
