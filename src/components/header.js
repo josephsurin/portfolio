@@ -20,7 +20,6 @@ const Header = () => (
                 <a href="https://www.linkedin.com/in/joseph-surin-0a756b17b/"><li><i className="icon-linkedin"></i>LinkedIn</li></a>
                 <a href="mailto:joseph.surin@gmail.com"><li><i className="icon-envelop"></i>Email</li></a>
                 <a href="https://t.me/josephsurin"><li><i className="icon-telegram"></i>Telegram</li></a>
-                <a href="/josephsurin-resume.pdf"><li><i className="icon-profile"></i>Resume</li></a>
             </ul>
         </div>
     </header>
