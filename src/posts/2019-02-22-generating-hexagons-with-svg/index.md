@@ -93,9 +93,13 @@ From the geometry of a hexagon, we can determine the width and height of it base
 <img src="./assets/hexgeometry.png" width="200" align="right" />
 
 The `width` of the hexagon is given by
-$$w = 2 \times \frac{\sqrt3 s}{2} = \sqrt3 s$$
+$$
+w = 2 \times \frac{\sqrt3 s}{2} = \sqrt3 s
+$$
 and the `height` is given by
-$$h = 2 \times \frac{s}{2} + s = 2 s$$
+$$
+h = 2 \times \frac{s}{2} + s = 2 s
+$$
 
 The next step is to find a position vector for each vertex of the hexagon; if we know where each vertex is, we can move to one of them and draw lines to its neighbours to form the hexagon shape.
 
@@ -105,7 +109,9 @@ For convenience, we'll name each vertex with a letter, starting with the top ver
 
 Looking at these two images, it isn't hard to determine the position vectors for each of the vertices. With the origin being at the top left as per SVG standards, the positions of the vertices are:
 
-$$\begin{aligned} a &= (\frac{w}{2}, 0) \hspace{0.3in} b = (w, \frac{h}{4}) \cr c &= (w, \frac{3h}{4}) \hspace{0.2in} d = (\frac{w}{2}, h) \cr e &= (0, \frac{3h}{4}) \hspace{0.2in} f = (0, \frac{h}{4})  \end{aligned}$$
+$$
+\begin{aligned} a &= (\frac{w}{2}, 0) \hspace{0.3in} b = (w, \frac{h}{4}) \cr c &= (w, \frac{3h}{4}) \hspace{0.2in} d = (\frac{w}{2}, h) \cr e &= (0, \frac{3h}{4}) \hspace{0.2in} f = (0, \frac{h}{4})  \end{aligned}
+$$
 
 This is easy enough to translate into Javascript:
 ```javascript
@@ -141,7 +147,9 @@ The image to the right [from MDN docs](https://developer.mozilla.org/en-US/docs/
 
 To help us with this, we'll define some new vectors $\overrightarrow{dl}$, $\overrightarrow{dr}$ and $\overrightarrow{dd}$ which are vectors parallel to the sides of the hexagon and with magnitude equal to `borderRadius`. Specifically:
 
-$$\begin{aligned} \overrightarrow{dl} &= br \times unit(f-a) \cr \overrightarrow{dr} &= br \times unit(b-a) \cr \overrightarrow{dd} &= br \times unit(e-f) \end{aligned}$$
+$$
+\begin{aligned} \overrightarrow{dl} &= br \times unit(f-a) \cr \overrightarrow{dr} &= br \times unit(b-a) \cr \overrightarrow{dd} &= br \times unit(e-f) \end{aligned}
+$$
 
 where $br$ is the border radius. Translating this to code:
 

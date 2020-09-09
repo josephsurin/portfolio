@@ -38,7 +38,9 @@ We know the flag format is `d4rk{XXXX}c0de`. The two ciphertexts given both have
 
 We begin by XORing the two ciphertexts to get the XOR, `x` of the two messages:
 
-$$\begin{aligned} c_1 \oplus c_2 &= (m_1 \oplus k) \oplus (m2 \oplus k) \cr &= (m_1 \oplus m_2) \oplus (k \oplus k) \cr &= (m_1 \oplus m_2) \oplus  0 \cr &= m_1 \oplus m_2 \end{aligned}$$
+$$
+\begin{aligned} c_1 \oplus c_2 &= (m_1 \oplus k) \oplus (m2 \oplus k) \cr &= (m_1 \oplus m_2) \oplus (k \oplus k) \cr &= (m_1 \oplus m_2) \oplus  0 \cr &= m_1 \oplus m_2 \end{aligned}
+$$
 
 So if we know the contents of either message, we can use that to extract the contents of the other. Since there are only 10 bytes, we can try each of the 7 offsets easily by hand. We find straightaway that XORing `x[1:5]` with `b'meme'` gives us `b'4rk{`. This tells us that the word `meme` is in the 2nd position of the second message. From this we fill in what we know of each message: `m1 = x4rk{xxxxx` `m2 = xmemexxxxx`. Since the flag is the concatenation of `m1` and `m2`, we are safe to assume even further: `m1 = d4rk{xxxxx` `m2 = xmeme}c0de`. Knowledge that the very first byte of the flag is `b'd'` allows us to obtain the first byte of `m2`: precisely, the first byte of `m2` is `ord('d') ^ x[0] = '_'`, so we get the full second part of the flag: `_meme}c0de`. We can find the last half of the first part of the flag by XORing `x[-5:]` with `b'}c0de'`. Doing this and concatenating `m1` and `m2` gives us the full flag: `d4rk{meme__meme}c0de`.
 
@@ -154,15 +156,21 @@ We can play around with the service (ask it to encrypt b'\x01'...) to find out t
 
 Because it will decrypt any message, we can ask it to decrypt $2^e \times c$ which will allow us to easily obtain the flag.
 
-$$\begin{aligned} m^e &\equiv c \pmod n \cr \implies 2^em^e &\equiv 2^e c \pmod n \cr \implies (2m)^e &\equiv 2^e c \pmod n \end{aligned}$$
+$$
+\begin{aligned} m^e &\equiv c \pmod n \cr \implies 2^em^e &\equiv 2^e c \pmod n \cr \implies (2m)^e &\equiv 2^e c \pmod n \end{aligned}
+$$
 
 So upon decryption:
 
-$$\begin{aligned} M &\equiv (2^ec)^d \pmod n \cr &\equiv 2^{ed}c^d \pmod n \cr &\equiv 2c^d \pmod n \end{aligned}$$
+$$
+\begin{aligned} M &\equiv (2^ec)^d \pmod n \cr &\equiv 2^{ed}c^d \pmod n \cr &\equiv 2c^d \pmod n \end{aligned}
+$$
 
 And therefore,
 
-$$\begin{aligned} m &= \frac{M}{2} \cr &= \frac{1}{2}2c^d \mod n \cr &= c^d \mod n \end{aligned}$$
+$$
+\begin{aligned} m &= \frac{M}{2} \cr &= \frac{1}{2}2c^d \mod n \cr &= c^d \mod n \end{aligned}
+$$
 
 So we just divide the resulting decryption by 2 to obtain the flag.
 
@@ -363,15 +371,21 @@ For brevity, we will write $f(x) = f(x,k,e,N) = kx^e \pmod N$ since $k$, $e$ and
 
 Then,
 
-$$f(f(x)) = f(kx^e \mod N) \equiv k(kx^e)^e \pmod N \equiv k^{e+1}x^{e^2} \pmod N$$
+$$
+f(f(x)) = f(kx^e \mod N) \equiv k(kx^e)^e \pmod N \equiv k^{e+1}x^{e^2} \pmod N
+$$
 
 Furthermore,
 
-$$f(f(f(x))) = f(k^{e+1}x^{e^2} \mod N) \equiv k(k^{e+1}x^{e^2})^e \pmod N \equiv k^{e^2+e+1}x^{e^3} \pmod N$$
+$$
+f(f(f(x))) = f(k^{e+1}x^{e^2} \mod N) \equiv k(k^{e+1}x^{e^2})^e \pmod N \equiv k^{e^2+e+1}x^{e^3} \pmod N
+$$
 
 In general, we have
 
-$$f_n(x) \equiv k^{e^{n-1}+e^{n-2}+\dots+1}x^{e^n} \pmod N$$
+$$
+f_n(x) \equiv k^{e^{n-1}+e^{n-2}+\dots+1}x^{e^n} \pmod N
+$$
 
 where $f_n$ denotes $n$ recursive applications of $f$.
 
@@ -383,13 +397,17 @@ For now, we will worry about efficiently computing the $k$ term with the sum in 
 
 It turns out we can compute the geometric series in logarithmic time using the fact:
 
-$$1 + a + a^2 + \dots + a^{2n+1} = (1 + a)(1 + (a^2) + (a^2)^2 + \dots + (a^2)^{n})$$
+$$
+1 + a + a^2 + \dots + a^{2n+1} = (1 + a)(1 + (a^2) + (a^2)^2 + \dots + (a^2)^{n})
+$$
 
 That is, if the highest exponent is odd, we can reduce the sum to a product of something we can easily compute $(1+a)$ and another geometric series with the highest exponent being halved.
 
 If the highest exponent is even, then we factor out $a$ to get an expression with a geometric series whose highest exponent is odd. i.e.:
 
-$$1 + a + a^2 + \dots + a^{2n} = 1 + a(1 + a + a^2 + \dots + a^{2n-1})$$
+$$
+1 + a + a^2 + \dots + a^{2n} = 1 + a(1 + a + a^2 + \dots + a^{2n-1})
+$$
 
 The base case for this recursive procedure will occur when the highest exponent is $0$, in which case, we simply return $1$.
 
@@ -403,16 +421,22 @@ def gp_sum(a, t, N):
 ```
 
 Now, we use [Euler's theorem](https://en.wikipedia.org/wiki/Euler%27s_theorem), which states
-$$x \equiv y \pmod{\phi(n)} \implies a^x \equiv a^y \pmod n$$
+$$
+x \equiv y \pmod{\phi(n)} \implies a^x \equiv a^y \pmod n
+$$
 with $\gcd(a,n) = 1$
 
 In particular, if we let $s = e^{n-1} + e^{n-2} + \dots + 1 \mod \phi(N)$, then
 
-$$s \equiv e^{n-1} + e^{n-2} + \dots + 1 \pmod{\phi(N)}$$
+$$
+s \equiv e^{n-1} + e^{n-2} + \dots + 1 \pmod{\phi(N)}
+$$
 
 and so
 
-$$k^s \equiv k^{e^{n-1}+e^{n-2}+\dots+1} \pmod N$$
+$$
+k^s \equiv k^{e^{n-1}+e^{n-2}+\dots+1} \pmod N
+$$
 
 #### Obtaining $x$
 
@@ -420,11 +444,15 @@ We have now reduce the recursively applied $f$ down to the expression $f_n(x) \e
 
 In particular, with $d_k$ such that $d_k k^s \equiv 1 \pmod N$, we compute:
 
-$$\begin{aligned} f_n(x) d_k &\equiv d_kk^sx^{e^n} \pmod N \cr &\equiv x^{e^n} \pmod N \end{aligned}$$
+$$
+\begin{aligned} f_n(x) d_k &\equiv d_kk^sx^{e^n} \pmod N \cr &\equiv x^{e^n} \pmod N \end{aligned}
+$$
 
 And to get $x$ on its own, we compute $d$ such that $d e^n \equiv 1 \pmod{\phi(N)}$ (i.e. the modular inverse of $e^n$ with respect to the modulus $\phi(N)$). We then raise our express to this power to obtain $x$:
 
-$$ (f_n(x)d_k)^d \equiv (x^{e^n})^d \pmod N \equiv x \pmod N$$
+$$
+ (f_n(x)d_k)^d \equiv (x^{e^n})^d \pmod N \equiv x \pmod N
+$$
 
 All that's left is to decode the value.
 

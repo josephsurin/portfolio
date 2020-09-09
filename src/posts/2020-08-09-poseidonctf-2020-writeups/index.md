@@ -179,11 +179,15 @@ Bob encrypts a message $m < p$ by computing $c = g^m \mod n$ using Alice's publi
 
 Alice decrypts Bob's encrypted message by computing
 
-$$\begin{aligned} a &= \frac{(c^{p-1} \mod {p^2}) - 1}{p} \\ b &= \frac{(g^{p-1} \mod {p^2}) - 1}{p} \end{aligned}$$
+$$
+\begin{aligned} a &= \frac{(c^{p-1} \mod {p^2}) - 1}{p} \\ b &= \frac{(g^{p-1} \mod {p^2}) - 1}{p} \end{aligned}
+$$
 
 and then computing
 
-$$m \equiv ab^{-1} \pmod p$$
+$$
+m \equiv ab^{-1} \pmod p
+$$
 
 Note: The actual cryptosystem introduces randomness by adding another parameter $h \equiv g^n \pmod n$ to the public key, and encrypting by computing $c \equiv g^m h^r \pmod n$ for a random $r$.
 
@@ -191,7 +195,9 @@ Note: The actual cryptosystem introduces randomness by adding another parameter 
 
 It turns out the factorisation problem is easy in this situation because $q$ is generated from $p$, and we can write a quartic in $p$ with known coefficients. Specifically, $q$ is the next prime after $p^2 + 2^{256}$. Prime gaps are quite small, so we can write $q = p^2 + 2^{256} + \delta$ for some brute-forcable $\delta$. Then
 
-$$\begin{aligned} n &= p^2 q \\ &= p^2 (p^2 + 2^{256} + \delta) \end{aligned}$$
+$$
+\begin{aligned} n &= p^2 q \\ &= p^2 (p^2 + 2^{256} + \delta) \end{aligned}
+$$
 
 After we recover the prime factorisation of $n$, we can decrypt as described above. 
 

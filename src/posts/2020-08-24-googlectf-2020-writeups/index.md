@@ -52,29 +52,41 @@ print('c =', hex(pow(bytes_to_long(flag), e, n)))
 
 We can write
 
-$$p = 2^{64 \cdot 15} s_0 + 2^{64 \cdot 14} s_1 + \cdots + 2^{64} s_{14} + s_{15}$$
+$$
+p = 2^{64 \cdot 15} s_0 + 2^{64 \cdot 14} s_1 + \cdots + 2^{64} s_{14} + s_{15}
+$$
 
 and
 
-$$q = 2^{64 \cdot 15} t_0 + 2^{64 \cdot 14} t_1 + \cdots + 2^{64} t_{14} + t_{15}$$
+$$
+q = 2^{64 \cdot 15} t_0 + 2^{64 \cdot 14} t_1 + \cdots + 2^{64} t_{14} + t_{15}
+$$
 
 where the $s_i$ and $t_i$ are related by
 
-$$s_i \equiv as_{i-1} \pmod {2^{64}} \qquad t_i \equiv at_{i-1} \pmod {2^{64}}$$
+$$
+s_i \equiv as_{i-1} \pmod {2^{64}} \qquad t_i \equiv at_{i-1} \pmod {2^{64}}
+$$
 
 So
 
-$$n = 2^{2 \cdot 64 \cdot 15} s_0 t_0 + \cdots + 2^{64} (s_{14}t_{15} + t_{14}s_{15}) + s_{15} t_{15}$$
+$$
+n = 2^{2 \cdot 64 \cdot 15} s_0 t_0 + \cdots + 2^{64} (s_{14}t_{15} + t_{14}s_{15}) + s_{15} t_{15}
+$$
 
 The goal is to recover any of the $s_i$ or $t_i$ as each chunk is generated from an LCG so any output will be easily recovered given at least one output.
 
 For simplicity, we'll write $s = s_{15}$ and $t = t_{15}$. Then, $s_{14} = a^{-1} s$ and $t_{14} = a^{-1} t$. Therefore, reducing $n$ modulo $2^{128}$ we get
 
-$$\begin{aligned} n &\equiv 2^{64} (2a^{-1}st) + st \pmod {2^{128}} \\ &\equiv st(2^{65}a^{-1} + 1) \pmod {2^{128}} \end{aligned}$$
+$$
+\begin{aligned} n &\equiv 2^{64} (2a^{-1}st) + st \pmod {2^{128}} \\ &\equiv st(2^{65}a^{-1} + 1) \pmod {2^{128}} \end{aligned}
+$$
 
 And since $(2^{65}a^{-1} + 1)$ is odd, it has a multiplicative inverse modulo $2^{128}$.
 
-$$st \equiv n(2^{65}a^{-1} + 1)^{-1} \pmod{ 2^{128} }$$
+$$
+st \equiv n(2^{65}a^{-1} + 1)^{-1} \pmod{ 2^{128} }
+$$
 
 We can compute the right hand side, and factoring it gives us possible factors for $s$ and $t$. Since $s$ and $t$ aren't prime, we'll have to play around a bit manually to see which factors are for $s$ and which are for $t$. This is quite easy to do; we just try to make $s$ and $t$ have roughly the same bit length.
 

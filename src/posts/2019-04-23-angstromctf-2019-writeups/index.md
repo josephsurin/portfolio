@@ -350,13 +350,17 @@ We're given an encryption script and some parameters. `n` is too hard to factor 
  - Padding to the right with `b'\x00'` is essentially a left shift of two bits, this is equivalent to multiplying by $16^2 = 256$ for the long representation of the bytes.
 Hence, padding by `pad_len` times of `b'\x00'` to the right of the flag is equivalent to multiplying the long representation of the flag by `256 ^ pad_len`. From this, we set up the equation: (letting $f =$ `flag`, $l =$ `pad_len`)
 
-$$\begin{aligned} (f\times256^l)^e &\equiv c \pmod n \cr \implies f^e\times256^{le} &\equiv c \pmod n \cr \implies f^e &\equiv dc \pmod n \end{aligned}$$
+$$
+\begin{aligned} (f\times256^l)^e &\equiv c \pmod n \cr \implies f^e\times256^{le} &\equiv c \pmod n \cr \implies f^e &\equiv dc \pmod n \end{aligned}
+$$
 
 Where $d$ is the modular inverse of $256^l$ in the integer mod ring of order $n$.
 
 Thus, we get
 
-$$f^e = kn + (dc \mod n)$$
+$$
+f^e = kn + (dc \mod n)
+$$
 
 For some feasibly brute forceable integer $k$.
 

@@ -894,23 +894,31 @@ Enter x:
 
 The operation being described is known as [tetration](https://en.wikipedia.org/wiki/Tetration). It is defined as:
 
-$$L(a, b) = \begin{cases} 1, & b = 0 \\ a^{L(a, b-1)}, & b > 0 \end{cases}$$
+$$
+L(a, b) = \begin{cases} 1, & b = 0 \\ a^{L(a, b-1)}, & b > 0 \end{cases}
+$$
 
 So essentially,
 
-$$\underbrace{a^{a^{a^{\ldots}}}}_\text{b a's} = a^T$$
+$$
+\underbrace{a^{a^{a^{\ldots}}}}_\text{b a's} = a^T
+$$
 
 where $T = \underbrace{a^{a^{a^{\ldots}}}}_\text{(b-1) a's}$
 
 From [Euler's Theorem](https://en.wikipedia.org/wiki/Euler%27s_theorem) we know that
 
-$$x \equiv y \pmod{\varphi(n)} \implies a^x \equiv a^y \pmod{n}$$
+$$
+x \equiv y \pmod{\varphi(n)} \implies a^x \equiv a^y \pmod{n}
+$$
 
 when $a$ and $n$ are [coprime](https://en.wikipedia.org/wiki/Coprime_integers).
 
 We see that
 
-$$\underbrace{a^{a^{a^{\ldots}}}}_\text{b a's} \equiv a^{T \mod \varphi(n)}\pmod{n}$$
+$$
+\underbrace{a^{a^{a^{\ldots}}}}_\text{b a's} \equiv a^{T \mod \varphi(n)}\pmod{n}
+$$
 
 where $T = \underbrace{a^{a^{a^{\ldots}}}}_\text{(b-1) a's}$
 

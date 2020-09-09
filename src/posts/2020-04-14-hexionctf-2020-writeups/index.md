@@ -64,25 +64,35 @@ We are presented with some cryptosystem that encrypts a message $m$ by evaluatin
 
 We can then set the coefficients of the polynomial $p$ as our unknowns. We write
 
-$$p(x) = a_0 + a_1x + a_2x^2 + \cdots + a_{63}x^{63}$$
+$$
+p(x) = a_0 + a_1x + a_2x^2 + \cdots + a_{63}x^{63}
+$$
 
 where $a_0$ is the flag.
 
 It is clear that if we have as many pairs of messages and their encryptions $(x, p(x))$ as the number of coefficients in the polynomial, we can solve the system of equations and recover the coefficients. For example, if we know $p(1) = v_1$, then we can write
 
-$$a_0 + a_1 + a_2 + \cdots + a_{63} = v_1$$
+$$
+a_0 + a_1 + a_2 + \cdots + a_{63} = v_1
+$$
 
 similarly, if we know $p(2) = v_2$, then we can write
 
-$$a_0 + 2a_1 + 2^2a_2 + \cdots + 2^{63}a_{63} = v_2$$
+$$
+a_0 + 2a_1 + 2^2a_2 + \cdots + 2^{63}a_{63} = v_2
+$$
 
 We can then write the equations $p(1) = v_1, p(2) = v_2, \ldots, p(64) = v_{64}$ in matrix form:
 
-$$\begin{bmatrix} 1 & 1 & 1^2 &\ldots & 1^{63} \\ 1 & 2 & 2^2 & \ldots & 2^{63} \\ \vdots & \ddots & & & \vdots \\ 1 & 64 & 64^2 & \ldots & 64^{63} \end{bmatrix}\begin{bmatrix} a_0 \\ a_1 \\ \vdots \\ a_{63} \end{bmatrix} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_{63} \end{bmatrix}$$
+$$
+\begin{bmatrix} 1 & 1 & 1^2 &\ldots & 1^{63} \\ 1 & 2 & 2^2 & \ldots & 2^{63} \\ \vdots & \ddots & & & \vdots \\ 1 & 64 & 64^2 & \ldots & 64^{63} \end{bmatrix}\begin{bmatrix} a_0 \\ a_1 \\ \vdots \\ a_{63} \end{bmatrix} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_{63} \end{bmatrix}
+$$
 
 So once we get the values $(x, p(x))$, we simply need to solve for the coefficient vector. This can easily be done by taking the inverse of the big matrix on the left and left multiplying it with the values matrix on the right hand side of the equation. That is,
 
-$$\begin{bmatrix} a_0 \\ a_1 \\ \vdots \\ a_{63} \end{bmatrix} = \begin{bmatrix} 1 & 1 & 1^2 &\ldots & 1^{63} \\ 1 & 2 & 2^2 & \ldots & 2^{63} \\ \vdots & \ddots & & & \vdots \\ 1 & 64 & 64^2 & \ldots & 64^{63} \end{bmatrix}^{-1}\begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_{63} \end{bmatrix}$$
+$$
+\begin{bmatrix} a_0 \\ a_1 \\ \vdots \\ a_{63} \end{bmatrix} = \begin{bmatrix} 1 & 1 & 1^2 &\ldots & 1^{63} \\ 1 & 2 & 2^2 & \ldots & 2^{63} \\ \vdots & \ddots & & & \vdots \\ 1 & 64 & 64^2 & \ldots & 64^{63} \end{bmatrix}^{-1}\begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_{63} \end{bmatrix}
+$$
 
 Implementing this with [sage](https://www.sagemath.org/) is the way to go as we can easily specify that values are elements of $\mathbb{F}_P$ and it'll automatically perform all operations within the field.
 

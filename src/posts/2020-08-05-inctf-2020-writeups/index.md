@@ -33,13 +33,17 @@ We are given `x^{flag} mod n` where `n` is a polynomial in $\mathbb{F}_{35201}[x
 
 **Proof:** We start by computing the total number of polynomials in $R$. That is, the number of polynomials with coefficients in $\mathbb{F}_p$ whose degree is less than $\deg(N)$. These polynomials can be written as
 
-$$\sum_{i=0}^{\deg(N)-1} k_i x^i$$
+$$
+\sum_{i=0}^{\deg(N)-1} k_i x^i
+$$
 
 There are $\deg(N)$ coefficients, and each coefficient can take up to $p$ values, so there are $p^{\deg(N)}$ possible polynomials.
 
 Next, we exclude the polynomials that are not invertible. These are polynomials that share a factor with $N(x)$, that is, multiples of $P_i(x)$. We use the [inclusion-exclusion principle](https://en.wikipedia.org/wiki/Inclusion%E2%80%93exclusion_principle) to obtain an expression for the number of polynomials that are not coprime to $N(x)$. Let $A_i$ be the subset of polynomials in $R$ that are multiples of $P_i$. Then
 
-$$\left | \bigcup_{i=1}^r A_i \right | = \sum_{i=1}^r | A_i | - \sum_{1 \leq i < j \leq r} | A_i \cap A_j | + \sum_{1 \leq i < j < k \leq r} | A_i \cap A_j \cap A_k | - \cdots + (-1)^{r} | A_1 \cap \cdots \cap A_r |$$
+$$
+\left | \bigcup_{i=1}^r A_i \right | = \sum_{i=1}^r | A_i | - \sum_{1 \leq i < j \leq r} | A_i \cap A_j | + \sum_{1 \leq i < j < k \leq r} | A_i \cap A_j \cap A_k | - \cdots + (-1)^{r} | A_1 \cap \cdots \cap A_r |
+$$
 
 Consider $A_i$. The polynomials in $A_i$ have the form $Q(x)P_i(x)$ where $Q(x)$ is of degree $\deg(N) - \deg(P_i)$. Therefore $|A_i| = p^{\deg(N) - \deg(P_i)}$.
 
@@ -49,7 +53,9 @@ In general, $| A_{i_1} \cap \cdots \cap A_{i_k} | = p^{\deg(N) - \deg(P_{i_1}) -
 
 So
 
-$$\begin{aligned} \#R &= p^{\deg(N) - 1} - \left | \bigcup_{i=1}^r A_i \right | \\ &= p^{\deg(P_1) + \cdots + \deg{P_r} - 1} - p^{\deg(P_2) + \cdots + \deg(P_r)} - p^{\deg(P_1) + \deg(P_3) + \cdots + \deg(P_r)} - \cdots \\ &\hspace{0.3in} + p^{\deg(P_3) + \cdots + \deg(P_r)} + p^{\deg(P_2) + \deg(P_4) + \cdots + \deg(P_r)} + \cdots + (-1)^{r} \\ &= (p^{\deg(P_1)} - 1)(p^{\deg(P_2)} - 1) \cdots (p^{\deg(P_r)} - 1) \\ &= \prod_{i=1}^r (p^{\deg(P_i)} - 1) \end{aligned}$$
+$$
+\begin{aligned} \#R &= p^{\deg(N) - 1} - \left | \bigcup_{i=1}^r A_i \right | \\ &= p^{\deg(P_1) + \cdots + \deg{P_r} - 1} - p^{\deg(P_2) + \cdots + \deg(P_r)} - p^{\deg(P_1) + \deg(P_3) + \cdots + \deg(P_r)} - \cdots \\ &\hspace{0.3in} + p^{\deg(P_3) + \cdots + \deg(P_r)} + p^{\deg(P_2) + \deg(P_4) + \cdots + \deg(P_r)} + \cdots + (-1)^{r} \\ &= (p^{\deg(P_1)} - 1)(p^{\deg(P_2)} - 1) \cdots (p^{\deg(P_r)} - 1) \\ &= \prod_{i=1}^r (p^{\deg(P_i)} - 1) \end{aligned}
+$$
 
 ### Solving the challenge
 

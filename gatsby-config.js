@@ -33,7 +33,6 @@ module.exports = {
                     },
                     {
                         resolve: 'gatsby-remark-katex',
-                        options: { displayMode: false }
                     },
                     {
                         resolve: 'gatsby-remark-copy-linked-files',

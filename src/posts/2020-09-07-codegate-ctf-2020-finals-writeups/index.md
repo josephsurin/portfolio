@@ -86,11 +86,15 @@ The `Chall` class is initialised with two (prime) numbers $p$ and $q$. It select
 
 Points on the curve are related by the equation
 
-$$y^2 \equiv x^3 + ax + b \pmod N$$
+$$
+y^2 \equiv x^3 + ax + b \pmod N
+$$
 
 We are given 2 points $(x_1, y_1)$ and $(x_2, y_2)$ on the curve, so we can solve for $a$ and $b$:
 
-$$\begin{aligned} a &\equiv (y_2^2 - x_2^3 + x_1^3 - y_1^2)(x_2 - x_1)^{-1} \pmod N \\ b &\equiv y_1^2 - x_1^3 - ax_1 \pmod N \end{aligned}$$
+$$
+\begin{aligned} a &\equiv (y_2^2 - x_2^3 + x_1^3 - y_1^2)(x_2 - x_1)^{-1} \pmod N \\ b &\equiv y_1^2 - x_1^3 - ax_1 \pmod N \end{aligned}
+$$
 
 We notice that the order of $E(\mathbb{F}_p)$ is rather smooth! If we can recover $p$, we should be able to solve the ECDLP in $E(\mathbb{F}_p)$.
 
@@ -98,13 +102,17 @@ So the goal for now is to recover $p$. Curiously, we are given $n = \#E(\mathbb{
 
 Let $t$ be the top ~128 bits of $n$. We know that $N = pq$, and $p \approx t + 37$. Now, construct the univariate polynomial in $\mathbb{Z}/N\mathbb{Z}$
 
-$$f(x) \equiv t + 2^{6}x + 37 \pmod N$$
+$$
+f(x) \equiv t + 2^{6}x + 37 \pmod N
+$$
 
 $f$ will have a root $|\delta| < 2^{122}$ (modulo $p$).
 
 We can recover $p$ by computing
 
-$$p = t + 2^6 \delta + 37$$
+$$
+p = t + 2^6 \delta + 37
+$$
 
 ### Part 2: Solving the ECDLP
 

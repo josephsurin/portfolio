@@ -101,21 +101,29 @@ The script encrypts `secret` twice using the probabilistic ElGamal encryption. T
 
 Let $r_1$ and $r_2$ be the random values used in the first and second ElGamal encryption. $r_1$ is some securely generated random value, and $r_2 \equiv Br_1 + A \pmod q$ is generated from the LCG. We are given $(c_1, c_2)$ and $(c_{11}, c_{22})$ where
 
-$$\begin{aligned} c_1 &\equiv g^{r_1} \pmod p \\ c_2 &\equiv mh^{r_1} \pmod p \\ c_{11} &\equiv g^{r_2} \equiv g^{Br_1 + A \mod q} \pmod p \\ c_{22} &\equiv mh^{r_2} \equiv mh^{Br_1 + A \mod q} \pmod p \end{aligned}$$
+$$
+\begin{aligned} c_1 &\equiv g^{r_1} \pmod p \\ c_2 &\equiv mh^{r_1} \pmod p \\ c_{11} &\equiv g^{r_2} \equiv g^{Br_1 + A \mod q} \pmod p \\ c_{22} &\equiv mh^{r_2} \equiv mh^{Br_1 + A \mod q} \pmod p \end{aligned}
+$$
 
 Notice that
 
-$$\begin{aligned} c_{22} &\equiv mh^{Br_1 + A} \\ &\equiv m(h^{r_1})^B h^A \\ &\equiv (mh^{r_1})(h^{r_1})^{B-1} h^A \\ &\equiv c_2 (h^{r_i})^{B-1} h^A \pmod p \end{aligned}$$
+$$
+\begin{aligned} c_{22} &\equiv mh^{Br_1 + A} \\ &\equiv m(h^{r_1})^B h^A \\ &\equiv (mh^{r_1})(h^{r_1})^{B-1} h^A \\ &\equiv c_2 (h^{r_i})^{B-1} h^A \pmod p \end{aligned}
+$$
 
 Therefore
 
-$$h^{r_i} \equiv (c_{22} c_2^{-1} h^{-A})^{B'} \pmod p$$
+$$
+h^{r_i} \equiv (c_{22} c_2^{-1} h^{-A})^{B'} \pmod p
+$$
 
 where $B' \equiv (B-1)^{-1} \pmod {p-1}$.
 
 Then, we can recover $m$ by computing
 
-$$m \equiv c_2 (h^{r_1})^{-1} \pmod p$$
+$$
+m \equiv c_2 (h^{r_1})^{-1} \pmod p
+$$
 
 This gives us the secret modulus:
 
@@ -137,11 +145,15 @@ assert(len(flag)==36)
 
 For clarity, write the modulus as
 
-$$N = p_1^{k_1}p_2^{k_2} \cdots p_r^{k_r}$$
+$$
+N = p_1^{k_1}p_2^{k_2} \cdots p_r^{k_r}
+$$
 
 Then
 
-$$\begin{aligned} c &\equiv m^e \pmod N \\ &\equiv m^e \pmod {p_1^{k_1} p_2^{k_2} \cdots p_r^{k_r}} \end{aligned}$$
+$$
+\begin{aligned} c &\equiv m^e \pmod N \\ &\equiv m^e \pmod {p_1^{k_1} p_2^{k_2} \cdots p_r^{k_r}} \end{aligned}
+$$
 
 This implies $c \equiv m^e \pmod {p_i^{k_i}}$. This is quite easy to show (sketch):
 
@@ -159,7 +171,9 @@ $d$ exists since $\gcd(\frac{e}{g}, \varphi(N)) = 1$. It follows that $d = \frac
 
 Then
 
-$$\begin{aligned} c^d &\equiv (m^e)^d \\ &\equiv (m^e)^{\frac{g}{e} + k\varphi(N)} \\ &\equiv m^g m ^{k\varphi(N)} \\ &\equiv m^g \pmod N \end{aligned}$$
+$$
+\begin{aligned} c^d &\equiv (m^e)^d \\ &\equiv (m^e)^{\frac{g}{e} + k\varphi(N)} \\ &\equiv m^g m ^{k\varphi(N)} \\ &\equiv m^g \pmod N \end{aligned}
+$$
 
 But we know that $m^g = m^2 < N$, so the congruence is actually an equality. Therefore, we can just take the integer square root to recover $m$ completely.
 
