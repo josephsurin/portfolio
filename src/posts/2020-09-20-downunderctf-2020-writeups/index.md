@@ -10,20 +10,20 @@ import './assets/style.css'
 I helped out with organising and writing (mostly crypto) challenges for [DownUnderCTF](https://duc.tf). Here are the writeups for my challenges! Congrats to the top teams and thanks to everyone for playing :)
 
 - crypto
-    - [rot-i](#rot-i)
-    - [babyrsa](#babyrsa)
-    - [Extra Cool Block Chaining](#ecbc)
-    - [Hex Shift Cipher](#hex-shift-cipher)
-    - [Cosmic Rays](#cosmic-rays)
-    - [impECCable](#impeccable)
-    - [1337crypt](#1337crypt)
-    - [LSB||MSB Calculation Game](#lsb-msb-calculation-game)
+    - [rot-i (447 solves)](#rot-i)
+    - [babyrsa (144 solves)](#babyrsa)
+    - [Extra Cool Block Chaining (52 solves)](#ecbc)
+    - [Hex Shift Cipher (44 solves)](#hex-shift-cipher)
+    - [Cosmic Rays (25 solves)](#cosmic-rays)
+    - [impECCable (3 solves)](#impeccable)
+    - [1337crypt (3 solves)](#1337crypt)
+    - [LSB||MSB Calculation Game (2 solves)](#lsb-msb-calculation-game)
 - rev
-    - [Flag Getter](#flag-getter)
+    - [Flag Getter (18 solves)](#flag-getter)
 - misc
-    - [Welcome!](#welcome)
+    - [Welcome! (480 solves)](#welcome)
 
-# rot-i (100pts) <a name="rot-i"></a>
+# rot-i (100pts) - 447 solves <a name="rot-i"></a>
 
 > ROT13 is boring!
 
@@ -68,7 +68,7 @@ The challenge can also be solved using only online tools, or just pen and paper.
 
 ---
 
-# babyrsa (200pts) <a name="babyrsa"></a>
+# babyrsa (200pts) - 144 solves <a name="babyrsa"></a>
 
 > This is just RSA for babies!
 
@@ -177,7 +177,7 @@ Flag: `DUCTF{e4sy_RSA_ch4ll_t0_g3t_st4rt3d}`
 
 ---
 
-# Extra Cool Block Chaining (422pts) <a name="ecbc"></a>
+# Extra Cool Block Chaining (422pts) - 52 solves <a name="ecbc"></a>
 
 > Everyone knows ECB is broken because it lacks diffusion. That's why I've come up with my own variant that uses IVs and chaining and all that cool stuff! It solves all the problems ECB had... I think
 >
@@ -323,7 +323,7 @@ Flag: `DUCTF{4dD1nG_r4nd0M_4rR0ws_4ND_x0RS_h3r3_4nD_th3R3_U5u4Lly_H3lps_Bu7_n0T_
 
 ---
 
-# Hex Shift Cipher (445pts) <a name="hex-shift-cipher"></a>
+# Hex Shift Cipher (445pts) - 44 solves <a name="hex-shift-cipher"></a>
 
 > People say shift ciphers aren't secure. I'm here to prove them wrong!
 
@@ -575,7 +575,7 @@ for i in range(1, len(plaintext)-N):
 
 Flag: `DUCTF{d1d_y0u_Us3_gu3ss1nG_0r_l1n34r_4lg3bRA??}`
 
-# Cosmic Rays (483pts) <a name="cosmic-rays"></a>
+# Cosmic Rays (483pts) - 25 solves <a name="cosmic-rays"></a>
 
 > Cosmic rays have severely corrupted my data!
 
@@ -760,7 +760,7 @@ Flag: `DUCTF{IVs_4r3nt_s3cret!_but_fl4gs_ar3!}`
 
 ---
 
-# impECCable (500pts) <a name="impeccable"></a>
+# impECCable (500pts) - 3 solves <a name="impeccable"></a>
 
 > Can you crack this flawless ECC signature scheme?
 >
@@ -1039,7 +1039,7 @@ Flag: `DUCTF{y0u_f0unD_7h3_h1dD3n_numB3r5!}`
 
 ---
 
-# 1337crypt (500pts) <a name="1337crypt"></a>
+# 1337crypt (500pts) - 3 solves <a name="1337crypt"></a>
 
 `1337crypt.sage`:
 
@@ -1170,7 +1170,7 @@ Flag: `DUCTF{wh0_N33ds_pr3cIsi0n_wh3n_y0u_h4v3_c0pp3rsmiths_M3thod}`
 
 ---
 
-# LSB||MSB Calculation Game (500pts) <a name="lsb-msb-calculation-game"></a>
+# LSB||MSB Calculation Game (500pts) - 2 solves <a name="lsb-msb-calculation-game"></a>
 
 > You know the drilll. Guess my numbers and you get the flag!
 >
@@ -1486,7 +1486,7 @@ Flag: `DUCTF{y0u_4r3_A_m4st3r_1n_gu3ss1ng_y0u_w1ll_g0_v3ry_f4r!_:)}`
 
 ---
 
-# Flag Getter (492pts) <a name="flag-getter"></a>
+# Flag Getter (492pts) - 18 solves <a name="flag-getter"></a>
 
 > An app that gets the flag for you! What more could you possibly want?
 
@@ -1616,7 +1616,7 @@ Flag: `DUCTF{n0t_s0_s3cre7_4ft3r_4LL_!!11!}`
 
 ---
 
-# Welcome! (100pts) <a name="welcome"></a>
+# Welcome! (100pts) - 440 solves <a name="welcome"></a>
 
 > Welcome to DUCTF!
 >
