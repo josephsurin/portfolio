@@ -5,6 +5,8 @@ date: 2020-09-29
 tags: ctf,infosec,writeup,crypto,android
 ---
 
+import './assets/style.css'
+
 I helped out with organising and writing (mostly crypto) challenges for [DownUnderCTF](https://duc.tf). Here are the writeups for my challenges! Congrats to the top teams and thanks to everyone for playing :)
 
 - crypto
@@ -179,7 +181,7 @@ Flag: `DUCTF{e4sy_RSA_ch4ll_t0_g3t_st4rt3d}`
 
 > Everyone knows ECB is broken because it lacks diffusion. That's why I've come up with my own variant that uses IVs and chaining and all that cool stuff! It solves all the problems ECB had... I think
 >
-> `nc chal.duc.tf 30201``
+> `nc chal.duc.tf 30201`
 
 `server.py`:
 
@@ -762,7 +764,7 @@ Flag: `DUCTF{IVs_4r3nt_s3cret!_but_fl4gs_ar3!}`
 
 > Can you crack this flawless ECC signature scheme?
 >
-> `nc chal.duc.tf 30203``
+> `nc chal.duc.tf 30203`
 
 ```python
 #!/usr/bin/env python3.8
@@ -1172,7 +1174,7 @@ Flag: `DUCTF{wh0_N33ds_pr3cIsi0n_wh3n_y0u_h4v3_c0pp3rsmiths_M3thod}`
 
 > You know the drilll. Guess my numbers and you get the flag!
 >
-> `nc chal.duc.tf 30204``
+> `nc chal.duc.tf 30204`
 
 `server.py`:
 
@@ -1618,7 +1620,7 @@ Flag: `DUCTF{n0t_s0_s3cre7_4ft3r_4LL_!!11!}`
 
 > Welcome to DUCTF!
 >
-> `ssh ductf@chal.duc.tf -p 30301``
+> `ssh ductf@chal.duc.tf -p 30301`
 >
 > Password: `ductf`
 
