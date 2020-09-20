@@ -6,7 +6,7 @@ exports.createPages = async({ actions, graphql, reporter }) => {
 
     const res = await graphql(`
         {
-            allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+            allMdx(sort: { order: DESC, fields: [frontmatter___date] }) {
                 edges {
                     node {
                         fileAbsolutePath
@@ -24,7 +24,7 @@ exports.createPages = async({ actions, graphql, reporter }) => {
         return reporter.panicOnBuild('Error while creating blog pages (GraphQL query)')
     }
 
-    var nodes = res.data.allMarkdownRemark.edges
+    var nodes = res.data.allMdx.edges
     var blog_nodes = nodes.filter(({ node }) => /\/posts\//.test(node.fileAbsolutePath))
     blog_nodes.forEach(({ node }, i) => {
         var prev = i === 0 ? null : blog_nodes[i-1].node

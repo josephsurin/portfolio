@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -12,7 +13,7 @@ import 'prismjs/plugins/command-line/prism-command-line.css'
 import 'katex/dist/katex.min.css'
 
 export default function Template({ data, pageContext }) {
-    const { markdownRemark: post } = data
+    const { mdx: post } = data
     const { prev, next } = pageContext
     return (
         <Layout>
@@ -23,7 +24,9 @@ export default function Template({ data, pageContext }) {
                 <div className="post-date">{post.frontmatter.date}</div>
                 <Tags tags={post.frontmatter.tags} />
                 <hr />
-                <div className="post-body" dangerouslySetInnerHTML={{ __html: post.html }}></div>
+                <div className="post-body">
+                    <MDXRenderer>{post.body}</MDXRenderer>
+                </div>
                 <hr />
                 <div className="blog-post-footer">
                     {prev && (
@@ -50,8 +53,8 @@ export default function Template({ data, pageContext }) {
 
 export const postQuery = graphql`
     query BlogPostByPath($path: String!) {
-        markdownRemark(frontmatter: { path: { eq: $path } }) {
-            html
+        mdx(frontmatter: { path: { eq: $path } }) {
+            body
             frontmatter {
                 date(formatString: "MMMM DD, YYYY")
                 path

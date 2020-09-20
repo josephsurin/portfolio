@@ -165,7 +165,7 @@ Since the flag is 36 bytes, we can solve for $m$ modulo some factor(s) of $N$ su
 
 So let $N = 653551912583^{15}$. Then $\varphi(N) = 653551912583^{15} - 653551912583^{14}$.
 
-Let $g = \gcd(e, \varphi(N)) = 2$ and let $d \equiv (\frac{e}{d})^{-1} \pmod {\varphi(N)}$.
+Let $g = \gcd(e, \varphi(N)) = 2$ and let $d \equiv (\frac{e}{g})^{-1} \pmod {\varphi(N)}$.
 
 $d$ exists since $\gcd(\frac{e}{g}, \varphi(N)) = 1$. It follows that $d = \frac{g}{e} + k\varphi(N)$ for some integer $k$.
 
