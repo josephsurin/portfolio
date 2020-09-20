@@ -742,7 +742,7 @@ msg = get_plaintext(key)
 pt = [msg[i:i+16] for i in range(0, len(msg), 16)]
 
 num_blocks = len(corrupted_ct)//32
-ct = [bytes.fromhex(corrupted_ct[:32])] + ['?' for _ in range(num_blocks-1)] + [recovered_ct1]
+ct = ['?' for _ in range(num_blocks-2)] + [recovered_ct1]
 for i in range(1, num_blocks-1):
     ct[-i-1] = strxor(strxor(decrypt(strxor(ct[-i], pt[-i-1]), key), pt[-i]), pt[-i-2])
 
@@ -751,7 +751,7 @@ print('[+] recovered ciphertext:\n\t' + '\n\t'.join(c.hex() for c in ct))
 Ep1 = strxor(decrypt(strxor(ct[0], pt[0]), key), pt[1])
 
 flag1 = strxor(decrypt(Ep1, key), pt[0]).decode()
-flag2 = strxor(Ep1, ct[0]).decode()
+flag2 = strxor(Ep1, bytes.fromhex(corrupted_ct[:32])).decode()
 
 print('[+] flag:', 'DUCTF{' + (flag1 + flag2) + '}')
 ```
