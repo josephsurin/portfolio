@@ -142,11 +142,15 @@ Suppose Bob wants to send Alice a message, encrypted using this cryptosystem.
 
 Alice chooses a superincreasing sequence of $n$ numbers,
 
-$$w = (w_1, w_2, \ldots, w_n)$$
+$$
+w = (w_1, w_2, \ldots, w_n)
+$$
 
 where $n$ is the number of bits used to represent the message and $w_i > 0$. She then chooses a random integer $q$, where $q > \sum_{i=0}^n w_i$ and a random integer $r$ such that $\gcd(q, r) = 1$. Next, she calculates the sequence
 
-$$b = (b_1, b_2, \ldots, b_n)$$
+$$
+b = (b_1, b_2, \ldots, b_n)
+$$
 
 where $b_i \equiv rw_i \pmod q$.
 
@@ -156,7 +160,9 @@ She publishes $b$ as her public key.
 
 Bob wants to send the message $m = (m_1, m_2, \ldots, m_n)$ where $m_i \in \{0, 1\}$. He computes the value
 
-$$c = \sum_{i=0}^n m_i b_i$$
+$$
+c = \sum_{i=0}^n m_i b_i
+$$
 
 and sends this to Alice.
 
@@ -166,7 +172,9 @@ Alice first calculates $c' \equiv cr^{-1} \pmod q$. She then uses a greedy algor
 
 To show that this works:
 
-$$\begin{aligned} c' &\equiv cr^{-1} \pmod q \\ &\equiv (m_1 b_2 + m_2 b_2 + \ldots + m_n b_n)r^{-1} \pmod q \\ &\equiv (m_1 r w_1 + m_2 r w_2 + \ldots + m_n r w_n)r^{-1} \pmod q \\ &\equiv (m_1 w_1 + m_2 w_2 + \ldots + m_n w_n) \pmod q \end{aligned}$$
+$$
+\begin{aligned} c' &\equiv cr^{-1} \pmod q \\ &\equiv (m_1 b_2 + m_2 b_2 + \ldots + m_n b_n)r^{-1} \pmod q \\ &\equiv (m_1 r w_1 + m_2 r w_2 + \ldots + m_n r w_n)r^{-1} \pmod q \\ &\equiv (m_1 w_1 + m_2 w_2 + \ldots + m_n w_n) \pmod q \end{aligned}
+$$
 
 hence, finding which weights give a solution to the knapsack problem for $c'$ will give the bits of $m$.
 

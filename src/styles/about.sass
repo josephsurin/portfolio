@@ -1,0 +1,39 @@
+@import 'vars'
+
+.about-container
+    +break-small
+      margin-left: auto
+      padding: 1rem
+      width: 90%
+    margin-right: auto
+    padding: 5vh 20vw
+    color: $light-grey
+    font-family: 'TT Commons'
+    font-size: 18px
+    h1
+        text-align: center
+        font-size: 64px
+        font-family: 'Source Sans Pro'
+        border-bottom: 1px solid $light-grey
+        color: $light-blue
+    ul
+      list-style: none
+      margin-left: 6px
+      li
+        margin: 16px 0
+        height: 100%
+        width: auto
+        a
+          padding: 6px
+          padding-bottom: 0
+          color: $light-grey
+          border-bottom: 1px solid $light-blue
+          &:hover
+            color: $light-blue
+            i
+              &:before
+                color: $light-blue
+          i
+            margin-right: 10px
+            &:before
+              color: $light-grey

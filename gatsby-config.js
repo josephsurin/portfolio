@@ -24,16 +24,16 @@ module.exports = {
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
         {
-            resolve: 'gatsby-transformer-remark',
+            resolve: 'gatsby-plugin-mdx',
             options: {
-                plugins: [
+                extensions: ['.mdx', '.md'],
+                gatsbyRemarkPlugins: [
                     {
                         resolve: 'gatsby-remark-prismjs',
                         options: { noInlineHighlight: true }
                     },
                     {
                         resolve: 'gatsby-remark-katex',
-                        options: { displayMode: false }
                     },
                     {
                         resolve: 'gatsby-remark-copy-linked-files',

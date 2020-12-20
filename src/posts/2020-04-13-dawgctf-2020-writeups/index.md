@@ -176,7 +176,9 @@ sock.close()
 
 The RSA encryption/decryption oracle gives us the flag ciphertext, $c$, and the public modulus, $n$, and allows us to encrypt/decrypt any message (except for the flag ciphertext). The server sends and receives values as bytes. Although we can't ask for the decryption of $c$ directly, the decryption of $c + n$ will give the decryption of $c$ while appearing different to the oracle. This follows from the fact that $n \equiv 0 \pmod n$ and the following properties of modular arithmetic:
 
-$$\begin{aligned} ka &\equiv kb \pmod m \\ a + c &\equiv b + d \pmod m \end{aligned}$$
+$$
+\begin{aligned} ka &\equiv kb \pmod m \\ a + c &\equiv b + d \pmod m \end{aligned}
+$$
 
 given $a \equiv b \pmod m$, $c \equiv d \pmod m$ and for all integers $k$.
 

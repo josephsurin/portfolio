@@ -123,13 +123,17 @@ print c
 
 This was an interesting RSA problem based around the modulus $n$ having multiple prime factors. The things that stand out immediately are the ways the primes `p2` and `q2` are generated. Since `p2` is the next prime after `p1` and `q2` is the next prime after `q1` we can write them as such:
 
-$$\begin{aligned} p_2 &= p_1 + \epsilon \cr q_2 &= q_1 + \delta \end{aligned}$$
+$$
+\begin{aligned} p_2 &= p_1 + \epsilon \cr q_2 &= q_1 + \delta \end{aligned}
+$$
 
 For small integers $\epsilon$ and $\delta$
 
 From this, we can further observe that $p_1q_2 - p_2q_1$ will be small since:
 
-$$\begin{aligned} p_1q_2 - p_2q_1 &= p_1(q_1 + \delta) - (p_1 + \epsilon)q_1 \cr &= p_1q_1 + p_1\delta - p_1q_1 - q_1\epsilon \cr &= p_1\delta - q_1\epsilon \end{aligned}$$
+$$
+\begin{aligned} p_1q_2 - p_2q_1 &= p_1(q_1 + \delta) - (p_1 + \epsilon)q_1 \cr &= p_1q_1 + p_1\delta - p_1q_1 - q_1\epsilon \cr &= p_1\delta - q_1\epsilon \end{aligned}
+$$
 
 Thus, $n$ can be easily factorised into the two factors $p_1q_2$ and $p_2q_1$. We can use [Alpertron's Integer Factorization Calculator](https://www.alpertron.com.ar/ECM.HTM) to do this for us in seconds. Then we get:
 
@@ -142,13 +146,19 @@ with `n1 = p1*q2` and `n2 = p2*q1`.
 
 From these two equations, it turns out we can derive a simple quadratic equation in terms of $\epsilon$, $\delta$, $n_1$ and $n_2$ to solve for any one of $p_1$, $p_2$, $q_1$ or $q_2$ :
 
-$$\begin{aligned} n_1 &= p_1q_2 \cr &= p_1(q_1 + \delta) \cr \implies p_1 &= \frac{n_1}{q_1 + \delta} \end{aligned}$$
+$$
+\begin{aligned} n_1 &= p_1q_2 \cr &= p_1(q_1 + \delta) \cr \implies p_1 &= \frac{n_1}{q_1 + \delta} \end{aligned}
+$$
 
-$$\begin{aligned} n_2 &= q_1p_2 \cr &= q_1(p_1 + \epsilon) \cr \implies p_1 &= \frac{n_2 - q_1\epsilon}{q_1} \end{aligned}$$
+$$
+\begin{aligned} n_2 &= q_1p_2 \cr &= q_1(p_1 + \epsilon) \cr \implies p_1 &= \frac{n_2 - q_1\epsilon}{q_1} \end{aligned}
+$$
 
 Combining these two results:
 
-$$\begin{aligned} \frac{n_2-q_1\epsilon}{q_1} = \frac{n_1}{q_1+\delta} \cr \implies (n_2-q_1\epsilon)(q_1+\delta) = n_1q_1 \cr \implies n_2q_1 + \delta n_2 - q_1^2 \epsilon - q_1 \epsilon \delta = n_1q_1 \cr \implies q_1^2 \epsilon + q_1(\epsilon \delta+n_1-n_2) - \delta n_2 = 0 \end{aligned}$$
+$$
+\begin{aligned} \frac{n_2-q_1\epsilon}{q_1} = \frac{n_1}{q_1+\delta} \cr \implies (n_2-q_1\epsilon)(q_1+\delta) = n_1q_1 \cr \implies n_2q_1 + \delta n_2 - q_1^2 \epsilon - q_1 \epsilon \delta = n_1q_1 \cr \implies q_1^2 \epsilon + q_1(\epsilon \delta+n_1-n_2) - \delta n_2 = 0 \end{aligned}
+$$
 
 Now all that's left is to bruteforce solve for $q_1$ with small $\epsilon$ and $\delta$. We should be able to comfortably find a solution for $(\epsilon , \delta) \in \{(x, y) \mid 0 \leq x \leq 5000, 0 \leq y \leq 5000\}$ . We should also note that we require $q_1$ to be prime. Script to solve for $q_1$ :
 

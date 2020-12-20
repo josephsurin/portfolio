@@ -161,31 +161,45 @@ Note that with this notation, $K_{K(l)} = l$ and $K(K_i) = i$.
 
 #### Encryption
 
-$$e_i \equiv \begin{cases} K(m_i) + s \pmod{26}, &\quad i = 0 \\ K(m_i) + K(m_{i-1}) + 1 \pmod{26}, &\quad i > 0 \end{cases}$$
+$$
+e_i \equiv \begin{cases} K(m_i) + s \pmod{26}, &\quad i = 0 \\ K(m_i) + K(m_{i-1}) + 1 \pmod{26}, &\quad i > 0 \end{cases}
+$$
 
-$$c_i = K_{e_i}, \quad i \geq 0$$
+$$
+c_i = K_{e_i}, \quad i \geq 0
+$$
 
 
 #### Decryption
 
 
-$$d_i \equiv \begin{cases} K(c_i) - s \pmod{26}, &\quad i = 0 \\ K(c_i) - K(m_{i-1}) - 1 \pmod{26}, &\quad i > 0 \end{cases}$$
+$$
+d_i \equiv \begin{cases} K(c_i) - s \pmod{26}, &\quad i = 0 \\ K(c_i) - K(m_{i-1}) - 1 \pmod{26}, &\quad i > 0 \end{cases}
+$$
 
 alternatively using the identity $K(K_i) = i$, we can write,
 
-$$d_i \equiv \begin{cases} e_i - s \pmod{26}, &\quad i = 0 \\ e_i - K(m_{i-1}) - 1 \pmod{26}, &\quad i > 0 \end{cases}$$
+$$
+d_i \equiv \begin{cases} e_i - s \pmod{26}, &\quad i = 0 \\ e_i - K(m_{i-1}) - 1 \pmod{26}, &\quad i > 0 \end{cases}
+$$
 
-$$m_i = K_{d_i}, \quad i \geq 0$$
+$$
+m_i = K_{d_i}, \quad i \geq 0
+$$
 
 #### Proof of correctness:
 
 We aim to prove $D(E(m)) = m$. We first prove the case for the first character:
 
-$$\begin{aligned} e_0 &\equiv K(m_0) + s \pmod{26} \\ \implies d_0 &\equiv e_0 - s \pmod{26} \\ &\equiv K(m_0) + s - s \pmod{26} \\ &\equiv K(m_0) \pmod{26} \end{aligned}$$
+$$
+\begin{aligned} e_0 &\equiv K(m_0) + s \pmod{26} \\ \implies d_0 &\equiv e_0 - s \pmod{26} \\ &\equiv K(m_0) + s - s \pmod{26} \\ &\equiv K(m_0) \pmod{26} \end{aligned}
+$$
 
 For the more general case:
 
-$$\begin{aligned} e_i &\equiv K(m_i) + K(m_{i-1}) + 1 \pmod{26} \\ \implies d_i &\equiv e_i - K(m_{i-1}) - 1 \pmod{26} \\ &\equiv K(m_i) + K(m_{i-1}) + 1 - K(m_{i-1}) - 1 \pmod{26} \\ &\equiv K(m_i) \pmod{26} \end{aligned}$$
+$$
+\begin{aligned} e_i &\equiv K(m_i) + K(m_{i-1}) + 1 \pmod{26} \\ \implies d_i &\equiv e_i - K(m_{i-1}) - 1 \pmod{26} \\ &\equiv K(m_i) + K(m_{i-1}) + 1 - K(m_{i-1}) - 1 \pmod{26} \\ &\equiv K(m_i) \pmod{26} \end{aligned}
+$$
 
 It follows that $m_i = K_{d_i} = K_{K(m_i)} = m_i$ in both cases.
 
@@ -239,11 +253,15 @@ Consider the variables $A, B, C, \ldots, Z$ as elements in $\mathbb{Z/26Z}$ repr
 
 We are trying to solve for 26 unknowns, and we're given 32 letters of plaintext. From the 32 letters of plaintext, we can set up 31 equations (we ignore the first letter which uses the shift as we can just bruteforce the shift later). We form each equation using the decryption formula described above. For example, since the first two letters of plaintext are `"IF"` and the first two letters of the ciphertext are `"TJ"`, we can write the two equations:
 
-$$\begin{aligned} T - s &\equiv I \pmod{26} \\ J - I - 1 &\equiv F \pmod{26} \end{aligned}$$
+$$
+\begin{aligned} T - s &\equiv I \pmod{26} \\ J - I - 1 &\equiv F \pmod{26} \end{aligned}
+$$
 
 where $s$ is the initial shift amount. We rewrite the equations as:
 
-$$\begin{aligned} T - s - I &\equiv 0 \pmod{26} \\ J - I - F - 1 &\equiv 0 \pmod{26} \end{aligned}$$
+$$
+\begin{aligned} T - s - I &\equiv 0 \pmod{26} \\ J - I - F - 1 &\equiv 0 \pmod{26} \end{aligned}
+$$
 
 We continue this process to get 31 equations.
 
@@ -251,21 +269,29 @@ To represent the equations, we use a 31x27 matrix with each row representing a s
 
 As an example, the equation $J - I - F - 1 = 0$ is represented by the row vector of size 27 (the top row containing letters is there for illustration purposes):
 
-$$\mathbf{e_0} = \begin{bmatrix} A &\ldots &F &G &H &I &J &K  &\ldots  &Z &1\\ 0 &\ldots &-1 &0 &0 &-1 &1 &0 &\ldots &0 &1 \end{bmatrix}$$
+$$
+\mathbf{e_0} = \begin{bmatrix} A &\ldots &F &G &H &I &J &K  &\ldots  &Z &1\\ 0 &\ldots &-1 &0 &0 &-1 &1 &0 &\ldots &0 &1 \end{bmatrix}
+$$
 
 With 31 of these vectors, we can set up the matrix equation:
 
-$$\begin{bmatrix} \mathbf{e_0} \\ \mathbf{e_1} \\ \vdots \\ \mathbf{e_{30}} \end{bmatrix}\begin{bmatrix} A \\ B \\ \vdots \\Z \\ g \end{bmatrix} \equiv \mathbf{0} \pmod{26}$$
+$$
+\begin{bmatrix} \mathbf{e_0} \\ \mathbf{e_1} \\ \vdots \\ \mathbf{e_{30}} \end{bmatrix}\begin{bmatrix} A \\ B \\ \vdots \\Z \\ g \end{bmatrix} \equiv \mathbf{0} \pmod{26}
+$$
 
 where $\mathbf{e_i}$ is the row vector representing the $ith$ equation and $g$ is some value we are not particularly concerned about.
 
 Our problem now reduces down to solving a system of linear congruences modulo 26. We see that the variables vector $(A, B, \ldots, Z, g)$ is any vector in the kernel of the equations matrix. We can solve this by using the congruences
 
-$$\begin{bmatrix} \mathbf{e_0} \\ \mathbf{e_1} \\ \vdots \\ \mathbf{e_{30}} \end{bmatrix}\begin{bmatrix} A \\ B \\ \vdots \\Z \\ g \end{bmatrix} \equiv \mathbf{0} \pmod{2}\quad \text{and} \quad \begin{bmatrix} \mathbf{e_0} \\ \mathbf{e_1} \\ \vdots \\ \mathbf{e_{30}} \end{bmatrix}\begin{bmatrix} A \\ B \\ \vdots \\Z \\ g \end{bmatrix} \equiv \mathbf{0} \pmod{13}$$
+$$
+\begin{bmatrix} \mathbf{e_0} \\ \mathbf{e_1} \\ \vdots \\ \mathbf{e_{30}} \end{bmatrix}\begin{bmatrix} A \\ B \\ \vdots \\Z \\ g \end{bmatrix} \equiv \mathbf{0} \pmod{2}\quad \text{and} \quad \begin{bmatrix} \mathbf{e_0} \\ \mathbf{e_1} \\ \vdots \\ \mathbf{e_{30}} \end{bmatrix}\begin{bmatrix} A \\ B \\ \vdots \\Z \\ g \end{bmatrix} \equiv \mathbf{0} \pmod{13}
+$$
 
 We take the basis vectors of the kernel of the equations matrix in $\mathbb{F}_2$ and the basis vectors of the kernel of the equations matrix in $\mathbb{F}_{13}$ and combine their results to get solutions in $\mathbb{Z/26Z}$. The nullity of the matrices in each ring is 2, so there are $26^4$ different possible linear combinations to try (although we could probably reduce this number with a bit more work). We write
 
-$$\mathbf{v} = c_0\mathbf{b_0} + c_1\mathbf{b_1} + c_2\mathbf{b_2} + c_3\mathbf{b_3}$$
+$$
+\mathbf{v} = c_0\mathbf{b_0} + c_1\mathbf{b_1} + c_2\mathbf{b_2} + c_3\mathbf{b_3}
+$$
 
 where $c_0, c_1, c_2, c_3 \in [0, 25]$ and $\mathbf{b_i}$ are the basis vectors. The elements of $\mathbf{v}$ are in $\mathbb{Z/26Z}$. If we compute $\mathbf{v}$ and find that $\mathbf{Ev} = 0$ (where $\mathbf{E}$ is the equations matrix in $\mathbb{Z/26Z}$), then we can add $\mathbf{v}$ as a possible key since it satisfies all the constraints of the system.
 

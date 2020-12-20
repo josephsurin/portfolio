@@ -67,7 +67,9 @@ Let $r$ denote the random padding used (the `rand` variable in the handout code)
 
 Define the function $f(x) = x + b$ and let $M_1 = f(M_2)$. Let $C_1$ denote the encryption of $M_1$, that is $C_1 \equiv f(M_2)^e \pmod N$. It is clear that we have the values of $C_1$ and $C_2$ as they are the second and first values in the `ct` array respectively. Hence, we can define the new functions:
 
-$$\begin{aligned} g_1 &\equiv f(x)^e - C_1 \pmod N \\ g_2 &\equiv x^e - C_2 \pmod N \end{aligned}$$
+$$
+\begin{aligned} g_1 &\equiv f(x)^e - C_1 \pmod N \\ g_2 &\equiv x^e - C_2 \pmod N \end{aligned}
+$$
 
 We see that $g_1$ and $g_2$ share a root. Namely, $x = M_2$. Thus, $g_1$ and $g_2$ share the common factor $(x - M_2)$. We can use the Euclidean algorithm to efficiently compute the gcd of the two polynomials and therefore recover the padding.
 

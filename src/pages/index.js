@@ -8,7 +8,7 @@ import SEO from '../components/seo'
 import Tags from '../components/tags'
 
 const IndexPage = ({ data }) => {
-    const { edges: posts } = data.allMarkdownRemark
+    const { edges: posts } = data.allMdx
     return (
         <Layout>
             <SEO title="Home" />
@@ -29,7 +29,7 @@ const IndexPage = ({ data }) => {
 
 export const pageQuery = graphql`
     query NewsQuery {
-        allMarkdownRemark(
+        allMdx(
             filter: { fileAbsolutePath: { regex: "\/posts\/" } },
             sort: { order: DESC, fields: [frontmatter___date] }
         ) {

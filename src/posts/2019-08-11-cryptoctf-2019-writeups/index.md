@@ -44,7 +44,11 @@ print encrypt_time_capsule(flag, n, t, z)
 ## Solution
 
 If we can calculate `l`, we can retrieve the flag. Since `t` is large, calculating `l` directly as we see it in the given code will be very hard. However, we can use the property from [modular arithmetic](https://en.wikipedia.org/wiki/Modular_arithmetic):
-$$c \equiv d \pmod{\phi(n)} \implies a^c \equiv a^d \pmod n$$
+
+$$
+c \equiv d \pmod{\phi(n)} \implies a^c \equiv a^d \pmod n
+$$
+
 which allows us to calculate `l` efficiently if we can factorise `n`. It turns out that `n` is easily factorised and therefore we can easily compute `l`:
 
 ```python
@@ -122,7 +126,9 @@ c = 0x2672cade2272f3024fd2d1984ea1b8e54809977e7a8c70a07e2560f39e6fcce0e292426e28
 
 We start by analysing the `adlit` function. All it does is flip the bits of its input, so algebraically, it is equivalent to: $adlit(x) = 2^l - 1 - x$, where $l$ is the bit length of $x$. We can see that this is used to generate the RSA primes; `p` is generated using `getPrime`, while `q` is generated from `p` using the `adlit` function. Therefore, we can construct a quadratic equation in `p` which we can easily solve:
 
-$\begin{aligned} q = 2^l - 1 - p + 31337 \implies n = pq &= p(2^l + 31336 - p) \cr &= 2^lp - 31336p - p^2 \end{aligned}$
+$$
+\begin{aligned} q = 2^l - 1 - p + 31337 \implies n = pq &= p(2^l + 31336 - p) \cr &= 2^lp - 31336p - p^2 \end{aligned}
+$$
 
 so we get $p^2 + (31336-2^l)p + n = 0$
 
@@ -132,16 +138,24 @@ The next part of the problem is finding the public exponent `e` and decrypting t
 
 So we assume that $e$ and $\phi(n)$ are not coprime. Let $g = \gcd(e, \phi(n))$. Then we can let 
 
-$$d \equiv (\frac{e}{g})^{-1} \pmod{\phi(n)}$$
+$$
+d \equiv (\frac{e}{g})^{-1} \pmod{\phi(n)}
+$$
 
 (note that $\frac{e}{g}$ is an integer). $d$ should exist if $\gcd(\frac{e}{g}, \phi(n)) = 1$. From this, we get
-$$d\times\frac{e}{g} \equiv 1 \pmod{\phi(n)}$$
+$$
+d\times\frac{e}{g} \equiv 1 \pmod{\phi(n)}
+$$
 which implies
-$$d\times\frac{e}{g} - 1 = k\phi(n) \\ \implies d = \frac{g}{e} (1 + k\phi(n))$$
+$$
+d\times\frac{e}{g} - 1 = k\phi(n) \\ \implies d = \frac{g}{e} (1 + k\phi(n))
+$$
 
 Then we perform the calculation:
 
-$$\begin{aligned} c^d &\equiv (m^e)^d \pmod n \cr &\equiv m^{ed} \pmod n \cr &\equiv m^{e\frac{g}{e}(1+k\phi(n))} \pmod n \cr &\equiv m^gm^{gk\phi(n)} \pmod n \cr &\equiv m^g(m^{gk})^{\phi(n)} \pmod n \cr &\equiv m^g \pmod n \end{aligned}$$
+$$
+\begin{aligned} c^d &\equiv (m^e)^d \pmod n \cr &\equiv m^{ed} \pmod n \cr &\equiv m^{e\frac{g}{e}(1+k\phi(n))} \pmod n \cr &\equiv m^gm^{gk\phi(n)} \pmod n \cr &\equiv m^g(m^{gk})^{\phi(n)} \pmod n \cr &\equiv m^g \pmod n \end{aligned}
+$$
 
 The last line follows from [Euler's theorem](https://en.wikipedia.org/wiki/Euler%27s_theorem)
 
