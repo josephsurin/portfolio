@@ -2,7 +2,7 @@ module.exports = {
     siteMetadata: {
         title: 'Joseph Surin Personal Blog',
         siteUrl: 'https://josephsurin.me',
-        description: 'CTF Writeups, personal projects, random stuff',
+        description: 'CTF writeups (mostly crypto), maybe some other stuff too',
         author: 'josephsurin',
     },
     plugins: [
