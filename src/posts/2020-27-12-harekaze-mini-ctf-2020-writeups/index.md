@@ -1,7 +1,7 @@
 ---
 path: /posts/2020-27-12-harekaze-mini-ctf-2020-writeups
 title: Harekaze mini CTF 2020 - Crypto
-date: 2020-27-12
+date: 2020-12-27
 tags: ctf,infosec,writeup,crypto
 ---
 
