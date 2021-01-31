@@ -7,7 +7,10 @@ tags: ctf,infosec,writeup,crypto
 
 Fun CTF but not enough crypto challs :(. I managed to get first blood on 25519!
 
-# 25519
+- [25519](#25519)
+- [Oracles](#oracles)
+
+# 25519 <a name="25519"></a>
 
 > One time signatures, so you can spend your coins only once.
 >
@@ -169,7 +172,7 @@ print(conn.recvline().decode())
 
 Flag: `jCTF{th1s_g4me_st0p_on1y_onc3}`
 
-# Oracles
+# Oracles <a name="oracles"></a>
 
 > Ask them and decrypt the flag.
 >
