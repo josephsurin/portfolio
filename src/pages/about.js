@@ -11,7 +11,7 @@ const AboutPage = () => (
         <SEO title="About | Joseph Surin" />
         <div className="about-container">
             <h1>About</h1>
-            Hi, I'm Joseph. I study Computer Science at the University of Melbourne. I'm interested in cyber security and play CTFs with <a href="https://ctftime.org/team/109523">misc</a>.
+            Hi, I'm Joseph. I study Computer Science at the University of Melbourne. I'm interested in cyber security and play CTFs with <a href="https://ctftime.org/team/140575">skateboarding dog</a> (and formerly, with <a href="https://ctftime.org/team/109523">misc</a> in 2020).
             <br/>
             <br/>
 
