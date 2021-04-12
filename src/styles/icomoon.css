@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?9tu07e');
-  src:  url('fonts/icomoon.eot?9tu07e#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?9tu07e') format('truetype'),
-    url('fonts/icomoon.woff?9tu07e') format('woff'),
-    url('fonts/icomoon.svg?9tu07e#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?6bb5de');
+  src:  url('fonts/icomoon.eot?6bb5de#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?6bb5de') format('truetype'),
+    url('fonts/icomoon.woff?6bb5de') format('woff'),
+    url('fonts/icomoon.svg?6bb5de#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -13,7 +13,7 @@
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
-  speak: none;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -25,12 +25,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-flag:before {
+.icon-discord:before {
+  content: "\e906";
+  color: #7289da;
+}
+.icon-cogs:before {
+  content: "\e900";
+}
+.icon-gears:before {
+  content: "\e900";
+}
+.icon-chevron-right:before {
   content: "\e901";
 }
-.icon-discord:before {
-  content: "\e900";
-  color: #7289da;
+.icon-chevron-left:before {
+  content: "\e902";
 }
 .icon-profile:before {
   content: "\e923";
@@ -38,11 +47,17 @@
 .icon-envelop:before {
   content: "\e945";
 }
-.icon-facebook:before {
-  content: "\ea90";
+.icon-flag:before {
+  content: "\e9cc";
+}
+.icon-checkmark:before {
+  content: "\ea10";
 }
 .icon-telegram:before {
   content: "\ea95";
+}
+.icon-twitter:before {
+  content: "\ea96";
 }
 .icon-github:before {
   content: "\eab0";
