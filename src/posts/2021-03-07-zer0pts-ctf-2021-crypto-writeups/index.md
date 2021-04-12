@@ -387,7 +387,7 @@ $$
 
 where $p$ is a large strong prime, $g$ is an element in $\mathbb{F}_p$ and $x$ is a random secret number. These three parameters are all initialised upon connection. $r$ is a random number chosen each round. $m$ is yoshiking's choice encoded as a number; $m = 1$ indicates rock, $m = 2$ indicates scissors and $m = 3$ indicates paper.
 
-The key thing to notice is that we only need to win 100 games, and we can play as much as we want, and that if we draw with yoshiking, nothing happens. This means, we don't necessarily need to determine what hand yoshiking will play exactly; if we can simply distinguish whether or not he will play rock, this will be enough to get 100 wins.
+The key thing to notice is that we only need to win 100 games, and we can play as much as we want, and that if we draw with yoshiking, nothing happens. This means, we don't necessarily need to determine what hand yoshiking will play exactly; if we can simply distinguish whether or not he will play paper, this will be enough to get 100 wins.
 
 We use quadratic residues to do this. Notice that if the private key $x$ is even (which happens about half of the time), then $c_2$ will always be a quadratic residue. Furthermore, for some non-negligible probability, $p$ will be generated such that $2$ is a quadratic residue, while $3$ is a quadratic nonresidue mod $p$. When we are lucky enough to get these parameters, whenever yoshiking selects rock or scissors ($m = 1$ or $m = 2$), then $c_2$ will be a quadratic residue, and whenever he selects paper ($m = 3$), $c_2$ will be a quadratic nonresidue (since a quadratic nonresidue multiplied by a quadratic residue gives a quadratic nonresidue).
 
@@ -637,7 +637,7 @@ While scrolling Twitter in bed, I came across this tweet (from the challenge aut
 
 I checked his profile to see if there was any context behind this tweet. The previous two tweets were just retweets of anime drawings. There was seemingly no context behind this tweet. Perhaps this tweet was a subtle hint; maybe I was on the right path and just had to rent a supercomputer to solve it... or maybe there was a better way?
 
-I woke up the next morning with a spark of inspiration. I realised that I had access to an encryption and decryption oracle from the server. I thought of a way to reduce the complexity down to $2^{25}$ by bruteforcing the third key. The only issue with this, is that I'd need to run all $2^{25}$ attempts against the remote server, which would take a long time, also noting that the server times out after an hour.
+I woke up the next morning with a spark of inspiration. I realised that I had access to an encryption and decryption oracle from the server. I thought of a way to reduce the complexity down to $2^{24}$ by bruteforcing the third key. The only issue with this, is that I'd need to run all $2^{24}$ attempts against the remote server, which would take a long time, also noting that the server times out after an hour.
 
 The idea goes as follows.
 
@@ -649,11 +649,11 @@ $$
 
 with the first IV as $\text{IV}_1$ and the second IV as $\text{RAND\_IV}_2$. Notice that if our guess for $k_3$ is correct, then the result of the decryption by the oracle will be our original plaintext (check the diagram above to verify this). Otherwise, it will be garbage.
 
-This gives us a way to recover the third key in just $2^{25}$ guesses. Once we have the third key, we can recover the first and second key using a regular offline meet-in-the-middle attack which should run in mere minutes.
+This gives us a way to recover the third key in just $2^{24}$ guesses. Once we have the third key, we can recover the first and second key using a regular offline meet-in-the-middle attack which should run in mere minutes.
 
-Excited to capture the flag, I got out of bed and began implementing this idea. But as I had somewhat suspected, the attack was not feasible. Even testing locally, it would take almost 3 hours to test all $2^{25}$ keys. I thought I could speed things up by parallelising a bit, but it was difficult since the attack required communicating to the server and things got messy when trying to do that on multiple threads. I felt defeated and went to work on NOT Mordell primes.
+Excited to capture the flag, I got out of bed and began implementing this idea. But as I had somewhat suspected, the attack was not feasible. Even testing locally, it would take almost 3 hours to test all $2^{24}$ keys. I thought I could speed things up by parallelising a bit, but it was difficult since the attack required communicating to the server and things got messy when trying to do that on multiple threads. I felt defeated and went to work on NOT Mordell primes.
 
-I came back to this challenge eventually and continued running the script thinking to myself, what if I just get extremely lucky? Then the idea came to me: what if instead of bruteforcing all $2^{25}$ keys, I just hope that I get lucky and only bruteforce up to say, $2^{16}$? If the server chooses the third key randomly such that the first byte is the null byte, then I'd get a hit and be able to recover the third key. If I use this approach, it would only take a few minutes to run the attack and the probability of it succeeding is about $1/256$. But the best part about it is that I'd be able to parallelise it.
+I came back to this challenge eventually and continued running the script thinking to myself, what if I just get extremely lucky? Then the idea came to me: what if instead of bruteforcing all $2^{24}$ keys, I just hope that I get lucky and only bruteforce up to say, $2^{16}$? If the server chooses the third key randomly such that the first byte is the null byte, then I'd get a hit and be able to recover the third key. If I use this approach, it would only take a few minutes to run the attack and the probability of it succeeding is about $1/256$. But the best part about it is that I'd be able to parallelise it.
 
 I spun up 4 DigitalOcean droplets in the same datacenter as the server and ran my script on 16 threads. After about an hour, I got some output; I had recovered the third key!
 
@@ -946,7 +946,7 @@ void _signme_setup(void) {
 
 ## Solution
 
-I almost skipped this challenge completely during the CTF because of its low solve count and daunting "pwn", "crypto" tags. But I'm glad I didn't because it actually turned out to be a very easy challenge. The task is essentially to forge an RSA signature, but the crypto seems sound and the only thing that seems suspicious is the randomness. In the code above, we see that randomness is seeded by the current time. `tv.tv_sec` is the number of seconds since the Epoch, and `tv.tv_usec` is the number of milliseconds that has passed in the current second. Because of this, it ranges from `0` to `1000000`.
+I almost skipped this challenge completely during the CTF because of its low solve count and daunting "pwn", "crypto" tags. But I'm glad I didn't because it actually turned out to be a very easy challenge. The task is essentially to forge an RSA signature, but the crypto seems sound and the only thing that seems suspicious is the randomness. In the code above, we see that randomness is seeded by the current time. `tv.tv_sec` is the number of seconds since the Epoch, and `tv.tv_usec` is the number of microseconds that has passed in the current second. Because of this, it ranges from `0` to `1000000`.
 
 At first I thought this would be trivial; all we had to do was generate a lookup table containing 1000000 entries and connect to the server with less than a second delay (which is reasonable enough). I implemented this, but soon realised this wouldn't work as it was taking way too long to generate the lookup table (estimated ~20 hours and the CTF was about to end).
 
