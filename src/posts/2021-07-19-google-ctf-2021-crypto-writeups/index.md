@@ -556,7 +556,7 @@ def get_corpus(N):
         S = b'a'*i + b'A' + b'a'*(255-i)
     return corpus
 
-corpus = get_corpus(256)
+corpus = get_corpus(257)
 
 def bytes_to_Fvec(b):
     return vector(F, [bool(c == 97) for c in b])
