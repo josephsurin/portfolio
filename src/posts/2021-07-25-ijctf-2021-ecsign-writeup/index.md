@@ -103,7 +103,7 @@ $$
 \end{aligned}
 $$
 
-Since XOR is annoying to work with algebraically, we estimate the XOR operations with additions:
+Since XOR is annoying to work with algebraically, we approximate the XOR operations with additions:
 
 $$
 \begin{aligned}
