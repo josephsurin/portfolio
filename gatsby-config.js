@@ -1,8 +1,8 @@
 module.exports = {
     siteMetadata: {
-        title: 'Joseph Surin Personal Blog',
-        siteUrl: 'https://josephsurin.me',
-        description: 'CTF writeups (mostly crypto), maybe some other stuff too',
+        title: 'joseph\'s blog',
+        siteUrl: 'https://jsur.in',
+        description: 'CTF writeups (mostly crypto)',
         author: 'josephsurin',
     },
     plugins: [
@@ -27,13 +27,16 @@ module.exports = {
             resolve: 'gatsby-plugin-mdx',
             options: {
                 extensions: ['.mdx', '.md'],
+                remarkPlugins: [
+                    require('remark-math')
+                ],
+                rehypePlugins: [
+                    [require('rehype-katex'), { strict: false }]
+                ],
                 gatsbyRemarkPlugins: [
                     {
                         resolve: 'gatsby-remark-prismjs',
                         options: { noInlineHighlight: true }
-                    },
-                    {
-                        resolve: 'gatsby-remark-katex',
                     },
                     {
                         resolve: 'gatsby-remark-copy-linked-files',
