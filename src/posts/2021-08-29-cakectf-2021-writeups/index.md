@@ -10,7 +10,7 @@ Fun CTF!
 |Challenge|Tags|Solves|
 |---|---|---|
 |[ALDRYA](#aldrya)|`reversing`|18|
-|[Party Ticket](#party-ticket)|`crypto` `coppersmith`|13|
+|[Party Ticket](#party-ticket)|`crypto` `coppersmith`|12|
 
 # ALDRYA <a name="aldrya"></a>
 
