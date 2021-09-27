@@ -2,7 +2,7 @@
 path: /posts/2020-09-20-downunderctf-2020-writeups
 title: DownUnderCTF 2020 Writeups
 date: 2020-09-20
-tags: ctf,infosec,writeup,crypto,android
+tags: ductf,writeup,crypto,android
 ---
 
 import './assets/style.css'

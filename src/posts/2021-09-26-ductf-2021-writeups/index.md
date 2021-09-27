@@ -2,7 +2,7 @@
 path: /posts/2021-09-26-ductf-2021-writeups
 title: DownUnderCTF 2021 Writeups
 date: 2021-09-26
-tags: ctf,infosec,writeup,crypto
+tags: ductf,writeup,crypto
 ---
 
 Thank you to everyone who played DownUnderCTF 2021. I hope you enjoyed the challenges :)
