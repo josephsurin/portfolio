@@ -108,37 +108,37 @@ I was inspired to write this challenge after the pain I went through trying to u
 [Writeup for Substitution Cipher III](https://jsur.in/posts/2021-09-26-ductf-2021-writeups#substitution-cipher-iii)
 
 
-## <a name="no-strings" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/reversing/no-strings">no strings</a>
+## <a name="no-strings" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/rev/no-strings">no strings</a>
 
 This was a very easy beginner challenge where you pretty much could have solved it by just looking at the handout binary in a text editor. It had almost a thousand solves and people seemed to find it fun and educational, but also (understandably) boring. I wrote this challenge a long time ago, but noticed only last month a challenge called "nostrings" appeared in CakeCTF which was also a warmup rev challenge. I decided to keep this challenge anyway because I couldn't think of any better name or theme for it, and the challenge concept is slightly different anyway.
 
 
-## <a name="flag-loader" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/reversing/flag-loader">flag loader</a>
+## <a name="flag-loader" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/rev/flag-loader">flag loader</a>
 
 This was an "easy" reversing challenge that probably should have been rated medium. You had to do some trickery and math to solve it which some people got confused about. Understandably, this challenge was frustrating but people also found it educational and fun. I tried to give nudges for this challenge to people who made tickets and most people were able to solve it with only a bit of help. We should probably have had an easier challenge to go between this and no strings.
 
 
-## <a name="connect-the-dots" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/reversing/connect-the-dots">connect the dots</a>
+## <a name="connect-the-dots" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/rev/connect-the-dots">connect the dots</a>
 
 This was a simple and pretty standard graph traversal problem where you had to figure out how the maze data was packed and find a certain shortest path. I figured since I already had a flag loader, flag printer and flag checker challenge, might as well add some more generic rev challenges. Regardless, people seemed to have enjoyed it which is good.
 
 
-## <a name="flag-printer" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/reversing/flag-printer">flag printer</a>
+## <a name="flag-printer" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/rev/flag-printer">flag printer</a>
 
 This challenge was a Golang binary where you had to figure out what it was doing and then optimise it. It had quite a bit of math elements in it because the operations being performed were matrix multiplications and exponentiations with massive numbers. There weren't any ticket requests for this challenge at all and the feedback is pretty consistent between frustrating, educational, and fun.
 
 
-## <a name="gamer" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/reversing/gamer">gamer</a>
+## <a name="gamer" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/rev/gamer">gamer</a>
 
 This challenge was a pain to make, so I'm relieved it was received relatively well. The inspiration for this challenge came from trying to see how easy it would be to hack other similar games online (for research purposes only!). I hadn't worked with Unity before so it was something new to learn. Reversing the actual game wasm probably would have been too difficult/tedious and I think almost all teams solved the intended way which was to hook the Unity game objects. Admittedly, this challenge was not really reversing and that might have been a little bit misleading for people.
 
 
-## <a name="bullet-hell" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/reversing/bullet-hell">bullet hell</a>
+## <a name="bullet-hell" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/rev/bullet-hell">bullet hell</a>
 
 This was probably my favourite reversing challenge. You had to play a bullet hell game and beat it to get the flag, but the bullets were hidden so you had to reverse the given binary to figure out how they were generated. There were some really neat solutions to this that solved the game dynamically, one [here](https://gist.github.com/uint0/f357856d4f386dd5233daa7408b0f01a) by another challenge author and one by [justinsteven](https://twitter.com/justinsteven) who told me about his solution in DMs. There was also apparently a solution where you could get the flag by messing with the terminal window size 🤔. Overall, people found this challenge fun and so did I!
 
 
-## <a name="flag-checker" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/reversing/flag-checker">flag checker</a>
+## <a name="flag-checker" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/rev/flag-checker">flag checker</a>
 
 I don't really have much to say about this challenge. It was meant to be a math/crypto inspired chall but z3 seems to solve it pretty easily (I should have known this, in hindsight). The hard difficulty tag is probably a bit misleading as it seems flag printer and bullet hell were harder.
 
