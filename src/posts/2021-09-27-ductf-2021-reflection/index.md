@@ -133,7 +133,7 @@ This challenge was a pain to make, so I'm relieved it was received relatively we
 
 ## <a name="bullet-hell" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/rev/bullet-hell">bullet hell</a>
 
-This was probably my favourite reversing challenge. You had to play a bullet hell game and beat it to get the flag, but the bullets were hidden so you had to reverse the given binary to figure out how they were generated. There were some really neat solutions to this that solved the game dynamically, one [here](https://gist.github.com/uint0/f357856d4f386dd5233daa7408b0f01a) by another challenge author and one by [justinsteven](https://twitter.com/justinsteven) who told me about his solution in DMs. There was also apparently a solution where you could get the flag by messing with the terminal window size 🤔. Overall, people found this challenge fun and so did I!
+This was probably my favourite reversing challenge. You had to play a bullet hell game and beat it to get the flag, but the bullets were hidden so you had to reverse the given binary to figure out how they were generated. There were some really neat solutions to this that solved the game dynamically, one [here](https://gist.github.com/uint0/f357856d4f386dd5233daa7408b0f01a) by another challenge author and one by [justinsteven](https://twitter.com/justinsteven) (writeup [here](https://www.justinsteven.com/posts/2021/10/01/ductf-bullet-hell/)). There was also apparently a solution where you could get the flag by messing with the terminal window size 🤔. Overall, people found this challenge fun and so did I!
 
 
 ## <a name="flag-checker" href="https://github.com/DownUnderCTF/Challenges_2021_Public/tree/main/rev/flag-checker">flag checker</a>
