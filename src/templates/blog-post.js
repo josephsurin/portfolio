@@ -17,7 +17,7 @@ export default function Template({ data, pageContext }) {
     const { prev, next } = pageContext
     return (
         <Layout>
-            <SEO title={`${post.frontmatter.title} | Joseph Surin`} />
+            <SEO title={`${post.frontmatter.title} | joseph`} />
             <div className="post-page">
                 <Link to="/" className="back-button">⬅ BACK</Link>
                 <div className="post-title">{post.frontmatter.title}</div>
