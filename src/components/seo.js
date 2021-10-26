@@ -17,8 +17,10 @@ function SEO({ description, lang, meta, title }) {
         site {
           siteMetadata {
             title
+            siteUrl
             description
             author
+            twitter
           }
         }
       }
@@ -58,6 +60,14 @@ function SEO({ description, lang, meta, title }) {
                 {
                     name: 'twitter:creator',
                     content: site.siteMetadata.author,
+                },
+                {
+                    name: 'twitter:site',
+                    content: twitter,
+                },
+                {
+                    name: 'twitter:image',
+                    content: `${siteUrl}/wolf.png`,
                 },
                 {
                     name: 'twitter:title',

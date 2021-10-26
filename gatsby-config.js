@@ -4,6 +4,7 @@ module.exports = {
         siteUrl: 'https://jsur.in',
         description: 'CTF writeups',
         author: 'josephsurin',
+        twitter: 'josep68_',
     },
     plugins: [
         'gatsby-plugin-react-helmet',
