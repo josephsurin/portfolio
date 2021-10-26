@@ -27,10 +27,10 @@ const AboutPage = () => (
 
             <h3>Links</h3>
             <ul>
-                <li><a href="https://github.com/josephsurin"><i className="icon-github"></i>GitHub</a></li>
-                <li><a href="https://twitter.com/josep68_"><i className="icon-twitter"></i>Twitter</a></li>
-                <li><a href="https://www.linkedin.com/in/joseph-surin-0a756b17b/"><i className="icon-linkedin"></i>LinkedIn</a></li>
-                <li><a href="mailto:joseph.surin@gmail.com"><i className="icon-envelop"></i>Email</a></li>
+                <li><a href="https://github.com/josephsurin"><i className="icon-github"></i>josephsurin</a></li>
+                <li><a href="https://twitter.com/josep68_"><i className="icon-twitter"></i>joseph68_</a></li>
+                <li><a href="https://www.linkedin.com/in/joseph-surin/"><i className="icon-linkedin"></i>joseph-surin</a></li>
+                <li><a href="#"><i className="icon-envelop"></i>[firstname].[lastname]@gmail.com</a></li>
                 <li><a href="#"><i className="icon-discord"></i>joseph#8210</a></li>
             </ul>
         </div>
