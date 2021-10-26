@@ -63,11 +63,11 @@ function SEO({ description, lang, meta, title }) {
                 },
                 {
                     name: 'twitter:site',
-                    content: site.twitter,
+                    content: site.siteMetadata.twitter,
                 },
                 {
                     name: 'twitter:image',
-                    content: `${site.siteUrl}/wolf.png`,
+                    content: `${site.seteMetadata.siteUrl}/wolf.png`,
                 },
                 {
                     name: 'twitter:title',
