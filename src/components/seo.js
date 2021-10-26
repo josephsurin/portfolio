@@ -67,7 +67,7 @@ function SEO({ description, lang, meta, title }) {
                 },
                 {
                     name: 'twitter:image',
-                    content: `${site.seteMetadata.siteUrl}/wolf.png`,
+                    content: `${site.siteMetadata.siteUrl}/wolf.png`,
                 },
                 {
                     name: 'twitter:title',
