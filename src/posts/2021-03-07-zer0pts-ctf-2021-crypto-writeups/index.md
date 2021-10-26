@@ -623,7 +623,7 @@ while True:
 
 This was a pretty gruelling task for me. I hope that my solution wasn't the intended one and by what the flag says it seems like it isn't, but anyway, here's how I solved it.
 
-I looked at this challenge for a bit when it was first released and noticed that the keys had only 3 bytes (24 bits) of security. I had seen this kind of problem [before](https://www.josephsurin.me/posts/2021-02-08-dicectf-2021-garbled) and got to work on implementing a meet-in-the-middle attack. But in this challenge, there are 3 ciphers. This meant I'd have to bruteforce two keys which would be $2^{48}$ keys. I knew this wasn't feasible with the computing resources available to me, but I implemented it anyway and ran it for a couple of hours (you never know, what if I had gotten extremely lucky?). Obviously, it didn't produce any results. I took a break and worked on some other challenges.
+I looked at this challenge for a bit when it was first released and noticed that the keys had only 3 bytes (24 bits) of security. I had seen this kind of problem [before](https://jsur.in/posts/2021-02-08-dicectf-2021-garbled) and got to work on implementing a meet-in-the-middle attack. But in this challenge, there are 3 ciphers. This meant I'd have to bruteforce two keys which would be $2^{48}$ keys. I knew this wasn't feasible with the computing resources available to me, but I implemented it anyway and ran it for a couple of hours (you never know, what if I had gotten extremely lucky?). Obviously, it didn't produce any results. I took a break and worked on some other challenges.
 
 I came back to this challenge and decided to look at it from a different angle. I began by drawing up a little diagram for the encryption and decryption of a single block.
 

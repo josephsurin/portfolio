@@ -8,7 +8,7 @@ import '../styles/about.sass'
 
 const AboutPage = () => (
     <Layout>
-        <SEO title="About | joseph" />
+        <SEO title="About" />
         <div className="about-container">
             <h1>About</h1>
             Hi, I'm Joseph. I study Computer Science and Pure Mathematics at the University of Melbourne. I'm interested in cyber security and cryptography and play CTFs with <a href="https://ctftime.org/team/140575">skateboarding dog</a> (and formerly, with <a href="https://ctftime.org/team/109523">misc</a> in 2020).

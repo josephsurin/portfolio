@@ -580,7 +580,7 @@ $$
 \end{aligned}
 $$
 
-Now, similarly to my [1337crypt challenge from DownUnderCTF](https://www.josephsurin.me/posts/2020-09-20-downunderctf-2020-writeups#1337crypt), we construct a polynomial whose roots will give us an approximation for $p$
+Now, similarly to my [1337crypt challenge from DownUnderCTF](https://jsur.in/posts/2020-09-20-downunderctf-2020-writeups#1337crypt), we construct a polynomial whose roots will give us an approximation for $p$
 
 $$
 (x+p)(x+q) = x^2 + (p+q)x + n
