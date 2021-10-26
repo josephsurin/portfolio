@@ -24,9 +24,31 @@ module.exports = {
         'gatsby-transformer-sharp',
         'gatsby-plugin-sharp',
         {
+            resolve: 'gatsby-transformer-remark',
+            options: {
+                plugins: [
+                    {
+                        resolve: 'gatsby-remark-prismjs',
+                        options: { noInlineHighlight: true }
+                    },
+                    {
+                        resolve: 'gatsby-remark-katex',
+                        // options: { displayMode: false }
+                    },
+                    {
+                        resolve: 'gatsby-remark-copy-linked-files',
+                    },
+                    {
+                        resolve: 'gatsby-remark-images',
+                        options: { maxWidth: 600 }
+                    }
+                ]
+            }
+        },
+        {
             resolve: 'gatsby-plugin-mdx',
             options: {
-                extensions: ['.mdx', '.md'],
+                extensions: ['.mdx'],
                 remarkPlugins: [
                     require('remark-math')
                 ],

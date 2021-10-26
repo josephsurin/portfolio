@@ -5,12 +5,12 @@
   "author": "Joseph Surin",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --log-pages",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "rm -rf .cache public && gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths --log-pages && gh-pages -d public"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
@@ -27,6 +27,7 @@
     "gatsby-plugin-sharp": "next",
     "gatsby-remark-copy-linked-files": "next",
     "gatsby-remark-images": "next",
+    "gatsby-remark-katex": "^6.0.0",
     "gatsby-remark-prismjs": "next",
     "gatsby-source-filesystem": "next",
     "gatsby-transformer-remark": "next",

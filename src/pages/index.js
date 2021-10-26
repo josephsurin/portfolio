@@ -8,7 +8,10 @@ import SEO from '../components/seo'
 import Tags from '../components/tags'
 
 const IndexPage = ({ data }) => {
-    const { edges: posts } = data.allMdx
+    const { edges: postsMd } = data.allMarkdownRemark
+    const { edges: postsMdx } = data.allMdx
+    const posts = postsMd.concat(postsMdx)
+    posts.sort((p1, p2) => (new Date(p2.node.frontmatter.date)).getTime() - (new Date(p1.node.frontmatter.date)).getTime())
     return (
         <Layout>
             <SEO title="Home" />
@@ -29,10 +32,19 @@ const IndexPage = ({ data }) => {
 
 export const pageQuery = graphql`
     query NewsQuery {
-        allMdx(
-            filter: { fileAbsolutePath: { regex: "\/posts\/" } },
-            sort: { order: DESC, fields: [frontmatter___date] }
-        ) {
+        allMarkdownRemark(filter: { fileAbsolutePath: { regex: "\/posts\/" } }) {
+            edges {
+                node {
+                    frontmatter {
+                        title
+                        date(formatString: "MMMM DD, YYYY")
+                        path
+                        tags
+                    }
+                }
+            }
+        }
+        allMdx(filter: { fileAbsolutePath: { regex: "\/posts\/" } }) {
             edges {
                 node {
                     frontmatter {
@@ -46,5 +58,6 @@ export const pageQuery = graphql`
         }
     }
 `
+
 
 export default IndexPage
