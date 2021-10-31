@@ -30,7 +30,7 @@ const AboutPage = () => (
                 <li><a href="https://github.com/josephsurin"><i className="icon-github"></i>josephsurin</a></li>
                 <li><a href="https://twitter.com/josep68_"><i className="icon-twitter"></i>joseph68_</a></li>
                 <li><a href="https://www.linkedin.com/in/joseph-surin/"><i className="icon-linkedin"></i>joseph-surin</a></li>
-                <li><a href="#"><i className="icon-envelop"></i>[firstname].[lastname]@gmail.com</a></li>
+                <li><a href="#"><i className="icon-envelop"></i>contact[at]jsur.in</a></li>
                 <li><a href="#"><i className="icon-discord"></i>joseph#8210</a></li>
             </ul>
         </div>
