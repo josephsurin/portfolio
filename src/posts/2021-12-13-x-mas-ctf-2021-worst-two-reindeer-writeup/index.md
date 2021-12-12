@@ -1,7 +1,7 @@
 ---
-path: /posts/2021-12-12-x-mas-ctf-2021-worst-two-reindeer-writeup
+path: /posts/2021-12-13-x-mas-ctf-2021-worst-two-reindeer-writeup
 title: X-MAS CTF 2021 - Worst two reindeer
-date: 2021-12-12
+date: 2021-12-13
 tags: ctf,writeup,crypto
 ---
 
