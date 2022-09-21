@@ -2,8 +2,7 @@
 
 .header-container
   height: $header-height
-  // width: 100vw
-  // position: fixed
+  // width: 100vw position: fixed
   background: darken($black, 5%)
   z-index: 99999
 
@@ -78,3 +77,24 @@
         font-family: 'Source Code Pro'
         i
           margin-right: 10px
+
+.index-header
+  +break-small
+    margin-left: auto
+    padding: 2rem
+
+  margin-right: auto
+  padding: 8vh 24vw 0 24vw
+  display: flex
+  align-items: center
+
+  .picture
+    .picture-img
+      border-radius: 50%
+      width: 56px
+
+  .bio
+    font-family: 'Aileron'
+    margin-left: 18px
+    line-height: 28px
+    font-weight: bold

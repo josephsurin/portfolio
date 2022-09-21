@@ -3,9 +3,11 @@ import { Link, graphql } from 'gatsby'
 
 import '../styles/blog-index.sass'
 
-import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Tags from '../components/tags'
+
+import '../styles/header.sass'
+import wolf from '../images/wolf.jpg'
 
 const IndexPage = ({ data }) => {
     const { edges: postsMd } = data.allMarkdownRemark
@@ -13,8 +15,24 @@ const IndexPage = ({ data }) => {
     const posts = postsMd.concat(postsMdx)
     posts.sort((p1, p2) => (new Date(p2.node.frontmatter.date)).getTime() - (new Date(p1.node.frontmatter.date)).getTime())
     return (
-        <Layout>
+        <>
             <SEO title="Home" />
+            <div className="index-header">
+                <div className="picture">
+                    <img src={wolf} className="picture-img"></img>
+                </div>
+                <div className="bio">
+                    <div>
+                        Written by <a href="https://twitter.com/josep68_">joseph</a>
+                    </div>
+                    <div>
+                        CTF <span style={{opacity: 0.5}}>∪ </span>
+                        Cryptography <span style={{opacity: 0.5}}>∪ </span>
+                        Security <span style={{opacity: 0.5}}>∪ </span>
+                        ?
+                    </div>
+                </div>
+            </div>
             <div className="blog-container">
                 <div className="posts">
                     {posts.map(({ node: post }) => (
@@ -26,7 +44,7 @@ const IndexPage = ({ data }) => {
                     ))}
                 </div>
             </div>
-        </Layout>
+        </>
     )
 }
 
