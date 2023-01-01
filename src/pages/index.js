@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => {
                 </div>
                 <div className="bio">
                     <div>
-                        Written by <a href="https://twitter.com/josep68_">joseph</a>
+                        Written by joseph (<a href="https://twitter.com/josep68_">Twitter</a>, <a rel="me" href="https://infosec.exchange/@josep68">Mastodon</a>)
                     </div>
                     <div>
                         CTF <span style={{opacity: 0.5}}>∪ </span>
