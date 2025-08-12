@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby'
 import '../styles/blog-index.sass'
 
 import SEO from '../components/seo'
-import Tags from '../components/tags'
+// import Tags from '../components/tags'
 
 import '../styles/header.sass'
 import wolf from '../images/wolf.jpg'
@@ -39,7 +39,7 @@ const IndexPage = ({ data }) => {
                         <div key={post.frontmatter.title} className="post">
                             <Link className="post-title" to={post.frontmatter.path}>{post.frontmatter.title}</Link>
                             <div className="post-date">{post.frontmatter.date}</div>
-                            <Tags tags={post.frontmatter.tags} />
+                            {/*<Tags tags={post.frontmatter.tags} />*/}
                         </div>
                     ))}
                 </div>
